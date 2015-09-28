@@ -2,7 +2,13 @@
 
 ## Getting started
 
+### Install npm requirements
+
+`npm install`
+
 ### Install webpack
+
+`[sudo] npm install webpack -g`
 
 ### Run build and server scripts
 
