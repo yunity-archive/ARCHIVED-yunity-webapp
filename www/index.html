@@ -9,51 +9,41 @@
     <title>YUNITY</title>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.5/leaflet.css" />
     <!--[if lte IE 8]>
     <script src="assets/js/ie/html5shiv.js"></script><![endif]-->
     <!--[if lte IE 8]>
     <link rel="stylesheet" href="assets/css/ie8.css"/><![endif]-->
 </head>
-<body data-ng-app="yunity" ng-controller="mainCtrl as mainCtrl">
-<!-- Header -->
-<div id="header">
-    <h3>YUNITY</h3>
+<body data-ng-app="yunity" ng-controller="mainCtrl as mainCtrl" ng-class="bodyClass">
+    <!-- Header -->
+    <div id="header">
+        <h3>YUNITY</h3>
 
-
-    <div id="navigation" data-ng-include="'navbar.html'">
-
-
-    </div>
-    <div id="map" ng-controller="mapCtrl" ng-hide="mainCtrl.isWide">
-
-
-        <!-- Insert some code for the map here -->
-        <img src="images/map_mock.png"/>
-
+        <div id="navigation" data-ng-include="'navbar.html'"></div>
     </div>
 
-    <!-- Main -->
-    <div id="main" ng-style="mainWidth"
-    ng-class="{'normal-width': !mainCtrl.isWide, 'wide': mainCtrl.isWide}">
+    <div id="main-wrapper" >
 
-    <h3>Foodbaskets</h3>
+        <div id="map-wrapper" ng-controller="mapCtrl">
+            <div id="map">
+            </div>
+        </div>
 
-    <ul ng-show="foodbaskets.length">
-        <li ng-repeat="basket in foodbaskets">
-            <strong>{{basket.title}}</strong> from {{basket.user.name}} in {{basket.position.name}}:<br>
-            <em>{{basket.description}}</em>
-        </li>
-    </ul>
-</div>
+        <!-- Main -->
+        <div id="main" ui-view>
 
-<!-- Footer -->
-<footer id="footer" ng-class="{'normal-width': !isWide, 'wide': isWide}">
+        </div>
+    </div>
 
-    Here is the footer with contact stuff and so on...
+    <!-- Footer -->
+    <footer id="footer">
 
-</footer>
+        Here is the footer with contact stuff and so on...
 
-<script type="text/javascript" src="build/bundle.js"></script>
+    </footer>
+
+    <script type="text/javascript" src="build/bundle.js"></script>
 
 </body>
 </html>

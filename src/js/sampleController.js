@@ -2,11 +2,11 @@
 (function (angular) {
     angular.module('yunity').controller('SampleController', function(
         $scope,
-        someHTML,
+        // someHTML,
         aNumber
     ) {
         $scope.state = {
-            foodsharingHTML: someHTML,
+            // foodsharingHTML: someHTML,
             aNumber: aNumber,
         };
     })

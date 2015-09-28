@@ -1,0 +1,9 @@
+
+    <h3>Foodbaskets</h3>
+
+    <ul ng-show="foodbaskets.length">
+        <li ng-repeat="basket in foodbaskets">
+            <strong>{{basket.title}}</strong> from {{basket.user.name}} in {{basket.position.name}}:<br>
+            <em>{{basket.description}}</em>
+        </li>
+    </ul>

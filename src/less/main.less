@@ -1,3 +1,4 @@
+@navbar-height: 50px;
 
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
   margin: 0;
@@ -27,26 +28,48 @@ circle {
   background-color: dodgerblue;
   background-attachment: scroll, fixed;
   color: rgba(255, 255, 255, 0.5);
-  height: 5%;
-  left: 0;
-  position: fixed;
+  height: @navbar-height;
   text-align: left;
-  top: 0;
   width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+#main-wrapper {
+  margin-top: @navbar-height;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+}
+
+#main {
+  padding: 10px;
+  color: black;
+  width: 50%;
+  height: 100%;
+}
+
+#map-wrapper {
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  transition: width 500ms;
 }
 
 /* Header */
 #map {
-  margin-left: 50%;
-  background-color: #1f1815;
-  background-attachment: scroll, fixed;
-  color: rgba(255, 255, 255, 0.5);
-  height: 95%;
-  left: 0;
-  position: fixed;
+  right: 0;
+  position: absolute;
   text-align: right;
-  top: 5%;
-  width: 50%;
+  top: 0;
+  width: 100%;
+  height: 100%;
+
 }
 
 /* Footer */
@@ -61,16 +84,13 @@ circle {
   color: black;
 }
 
-/* Main */
-.normal-width {
-  width: calc(100% - 50%);
-}
+body.hide-map {
 
-.wide {
-  width: 100%;
-}
+  #main {
+    width: 100% !important;
+  }
 
-#main {
-  padding: 8em 4em 4em 4em;
-  color: black;
+  #map-wrapper {
+    width: 0% !important;
+  }
 }

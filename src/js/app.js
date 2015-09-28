@@ -11,21 +11,6 @@ require('angular-ui-router');
         'ui.router',
     ]);
 
-    yunity.controller('mainCtrl', ['$scope', '$http', function($scope, $http) {
-
-        this.isWide = false;
-
-        $scope.foodbaskets = [];
-
-
-        $http.get('http://localhost:3000/db').
-            then(function(response) {
-                $scope.foodbaskets = response.data;  //retrieve results and add to existing results
-                console.log(response);
-        });
-
-    }]);
-
     yunity.controller('mapCtrl', ['$scope', '$http', function($scope, $html) {
         // do something here...
     }]);
@@ -35,25 +20,21 @@ require('angular-ui-router');
         $urlRouterProvider.otherwise('/');
 
         $stateProvider
-            .state('home', {
-                url: '/home',
-                templateUrl: staticURL('home.html'),
-                resolve: {},
-            })
             .state('about', {
                 url: '/about',
                 templateUrl: staticURL('about.html'),
                 controller: 'SampleController',
                 resolve: {
-                    someHTML: function ($http) {
-                        return $http.get('http://localhost:8000/api/login');
-                    },
+                    // someHTML: function ($http) {
+                    //     return $http.get('http://localhost:8000/api/login');
+                    // },
                     aNumber: function() { return 42 },
                 },
             })
-          .state('map', {
+          .state('home', {
                 url: '/',
-                templateUrl: staticURL('home.html'),
+                templateUrl: staticURL('foodbaskets.html'),
+                controller: 'mapCtrl',
                 resolve: {},
             })
     });
