@@ -53,6 +53,7 @@
 	__webpack_require__(/*! ./js/app */ 5);
 	__webpack_require__(/*! ./js/sampleController */ 9);
 	__webpack_require__(/*! ./js/mainCtrl */ 10);
+	__webpack_require__(/*! ./js/mapCtrl */ 12);
 
 
 /***/ },
@@ -408,15 +409,29 @@
 	
 	    var yunity = angular.module('yunity', ['ui.router']);
 	
-	    yunity.controller('mapCtrl', ['$scope', '$http', function ($scope, $html) {
-	        // do something here...
-	    }]);
-	
 	    yunity.config(function ($stateProvider, $urlRouterProvider) {
 	
 	        $urlRouterProvider.otherwise('/');
 	
-	        $stateProvider.state('about', {
+	        $stateProvider.state('home', {
+	            url: '/',
+	            templateUrl: staticURL('foodbaskets.html'),
+	            controller: 'mainCtrl',
+	            resolve: {
+	                foodbasketsPayload: function foodbasketsPayload() {
+	                    return [{
+	                        title: 'Banana basket',
+	                        description: 'fresh, bright yellow bananas',
+	                        user: {
+	                            name: 'Marcel'
+	                        },
+	                        position: {
+	                            name: 'Hawaii'
+	                        }
+	                    }];
+	                }
+	            }
+	        }).state('about', {
 	            url: '/about',
 	            templateUrl: staticURL('about.html'),
 	            controller: 'SampleController',
@@ -428,11 +443,6 @@
 	                    return 42;
 	                }
 	            }
-	        }).state('home', {
-	            url: '/',
-	            templateUrl: staticURL('foodbaskets.html'),
-	            controller: 'mapCtrl',
-	            resolve: {}
 	        });
 	    });
 	})();
@@ -33690,40 +33700,11 @@
 	'use strict';
 	
 	var angular = __webpack_require__(/*! angular */ 6);
-	var L = __webpack_require__(/*! leaflet */ 11);
 	
-	angular.module('yunity').controller('mainCtrl', ['$scope', '$http', function ($scope, $http) {
-	
-	    this.hideMap = false;
+	angular.module('yunity').controller('mainCtrl', ['$scope', '$http', 'foodbasketsPayload', function ($scope, $http, foodbasketsPayload) {
 	
 	    // $scope.foodbaskets = [];
-	    $scope.foodbaskets = [{
-	        title: 'Banana basket',
-	        description: 'fresh, bright yellow bananas',
-	        user: {
-	            name: 'Marcel'
-	        },
-	        position: {
-	            name: 'Hawaii'
-	        }
-	    }];
-	
-	    $scope.bodyClass = {
-	        'hide-map': this.hideMap
-	    };
-	
-	    $scope.toggleMap = function () {
-	        this.hideMap = !this.hideMap;
-	        $scope.bodyClass = {
-	            'hide-map': this.hideMap
-	        };
-	    };
-	
-	    var map = L.map('map').setView([51.505, -0.09], 13);
-	
-	    L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-	        attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-	    }).addTo(map);
+	    $scope.foodbaskets = foodbasketsPayload;
 	
 	    $http.get('http://localhost:3000/db').then(function (response) {
 	        $scope.foodbaskets = response.data; //retrieve results and add to existing results
@@ -42901,6 +42882,38 @@
 	
 	
 	}(window, document));
+
+/***/ },
+/* 12 */
+/*!***************************!*\
+  !*** ./src/js/mapCtrl.js ***!
+  \***************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	var angular = __webpack_require__(/*! angular */ 6);
+	var L = __webpack_require__(/*! leaflet */ 11);
+	
+	angular.module('yunity').controller('mapCtrl', ['$scope', '$http', function ($scope, $html) {
+	
+	    var hideMap = false;
+	
+	    $scope.bodyClass = {
+	        'hide-map': hideMap
+	    };
+	
+	    $scope.toggleMap = function () {
+	        hideMap = !hideMap;
+	        $scope.bodyClass['hide-map'] = !$scope.bodyClass['hide-map'];
+	    };
+	
+	    var map = L.map('map').setView([51.505, -0.09], 13);
+	
+	    L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+	        attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+	    }).addTo(map);
+	}]);
 
 /***/ }
 /******/ ]);

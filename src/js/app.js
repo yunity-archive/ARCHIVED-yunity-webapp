@@ -11,15 +11,30 @@ require('angular-ui-router');
         'ui.router',
     ]);
 
-    yunity.controller('mapCtrl', ['$scope', '$http', function($scope, $html) {
-        // do something here...
-    }]);
-
     yunity.config(function($stateProvider, $urlRouterProvider) {
 
         $urlRouterProvider.otherwise('/');
 
         $stateProvider
+            .state('home', {
+                url: '/',
+                templateUrl: staticURL('foodbaskets.html'),
+                controller: 'mainCtrl',
+                resolve: {
+                    foodbasketsPayload: function() {
+                        return [{
+                            title: 'Banana basket',
+                            description: 'fresh, bright yellow bananas',
+                            user: {
+                                name: 'Marcel'
+                            },
+                            position: {
+                                name: 'Hawaii'
+                            }
+                        }]
+                    }
+                },
+            })
             .state('about', {
                 url: '/about',
                 templateUrl: staticURL('about.html'),
@@ -30,12 +45,6 @@ require('angular-ui-router');
                     // },
                     aNumber: function() { return 42 },
                 },
-            })
-          .state('home', {
-                url: '/',
-                templateUrl: staticURL('foodbaskets.html'),
-                controller: 'mapCtrl',
-                resolve: {},
             })
     });
 
