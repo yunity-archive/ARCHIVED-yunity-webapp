@@ -11,6 +11,25 @@ require('angular-ui-router');
         'ui.router',
     ]);
 
+    yunity.controller('mainCtrl', ['$scope', '$http', function($scope, $http) {
+
+        this.isWide = false;
+
+        $scope.foodbaskets = [];
+
+
+        $http.get('http://localhost:3000/db').
+            then(function(response) {
+                $scope.foodbaskets = response.data;  //retrieve results and add to existing results
+                console.log(response);
+        });
+
+    }]);
+
+    yunity.controller('mapCtrl', ['$scope', '$http', function($scope, $html) {
+        // do something here...
+    }]);
+
     yunity.config(function($stateProvider, $urlRouterProvider) {
 
         $urlRouterProvider.otherwise('/');
@@ -31,6 +50,11 @@ require('angular-ui-router');
                     },
                     aNumber: function() { return 42 },
                 },
+            })
+          .state('map', {
+                url: '/',
+                templateUrl: staticURL('home.html'),
+                resolve: {},
             })
     });
 

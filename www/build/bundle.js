@@ -95,7 +95,7 @@
 	
 	
 	// module
-	exports.push([module.id, "html,\nbody {\n  margin: 0;\n  padding: 0;\n  background: #c0ffee;\n}\ncircle {\n  stroke: black;\n  stroke-width: 3px;\n}\n", ""]);
+	exports.push([module.id, "html,\nbody,\ndiv,\nspan,\napplet,\nobject,\niframe,\nh1,\nh2,\nh3,\nh4,\nh5,\nh6,\np,\nblockquote,\npre,\na,\nabbr,\nacronym,\naddress,\nbig,\ncite,\ncode,\ndel,\ndfn,\nem,\nimg,\nins,\nkbd,\nq,\ns,\nsamp,\nsmall,\nstrike,\nstrong,\nsub,\nsup,\ntt,\nvar,\nb,\nu,\ni,\ncenter,\ndl,\ndt,\ndd,\nol,\nul,\nli,\nfieldset,\nform,\nlabel,\nlegend,\ntable,\ncaption,\ntbody,\ntfoot,\nthead,\ntr,\nth,\ntd,\narticle,\naside,\ncanvas,\ndetails,\nembed,\nfigure,\nfigcaption,\nfooter,\nheader,\nhgroup,\nmenu,\nnav,\noutput,\nruby,\nsection,\nsummary,\ntime,\nmark,\naudio,\nvideo {\n  margin: 0;\n  padding: 0;\n  border: 0;\n  font-size: 100%;\n  font: inherit;\n  vertical-align: baseline;\n}\ncircle {\n  stroke: black;\n  stroke-width: 3px;\n}\n#navigation {\n  text-align: right;\n}\n#navigation li {\n  display: inline;\n  padding: 20px;\n}\n#header {\n  background-color: dodgerblue;\n  background-attachment: scroll, fixed;\n  color: rgba(255, 255, 255, 0.5);\n  height: 5%;\n  left: 0;\n  position: fixed;\n  text-align: left;\n  top: 0;\n  width: 100%;\n}\n/* Header */\n#map {\n  margin-left: 50%;\n  background-color: #1f1815;\n  background-attachment: scroll, fixed;\n  color: rgba(255, 255, 255, 0.5);\n  height: 95%;\n  left: 0;\n  position: fixed;\n  text-align: right;\n  top: 5%;\n  width: 50%;\n}\n/* Footer */\n#footer {\n  width: 100%;\n  bottom: 0;\n  left: 0;\n  padding: 0 4em 0 0;\n  position: fixed;\n  text-align: left;\n  background-color: green;\n  color: black;\n}\n/* Main */\n.normal-width {\n  width: calc(50%);\n}\n.wide {\n  width: 100%;\n}\n#main {\n  padding: 8em 4em 4em 4em;\n  color: black;\n}\n", ""]);
 	
 	// exports
 
@@ -407,6 +407,22 @@
 	
 	    var yunity = angular.module('yunity', ['ui.router']);
 	
+	    yunity.controller('mainCtrl', ['$scope', '$http', function ($scope, $http) {
+	
+	        this.isWide = false;
+	
+	        $scope.foodbaskets = [];
+	
+	        $http.get('http://localhost:3000/db').then(function (response) {
+	            $scope.foodbaskets = response.data; //retrieve results and add to existing results
+	            console.log(response);
+	        });
+	    }]);
+	
+	    yunity.controller('mapCtrl', ['$scope', '$http', function ($scope, $html) {
+	        // do something here...
+	    }]);
+	
 	    yunity.config(function ($stateProvider, $urlRouterProvider) {
 	
 	        $urlRouterProvider.otherwise('/');
@@ -427,6 +443,10 @@
 	                    return 42;
 	                }
 	            }
+	        }).state('map', {
+	            url: '/',
+	            templateUrl: staticURL('home.html'),
+	            resolve: {}
 	        });
 	    });
 	})();
