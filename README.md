@@ -1,4 +1,4 @@
-# yunity-frontend
+# yunity-webapp
 
 ## Getting started
 
