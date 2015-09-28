@@ -1,0 +1,4 @@
+#!/bin/sh
+
+# --reporter min nyan
+mocha --compilers js:mocha-babel test/test.js --watch --reporter min 
