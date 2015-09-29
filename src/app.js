@@ -21,7 +21,7 @@ require('angular-strap');
         $stateProvider
             .state('home', {
                 url: '/home',
-                template: require('../src/components/foodbaskets/foodbaskets.html'),
+                //template: require('../src/components/foodbaskets/foodbaskets.html'),
                 controller: 'mainCtrl',
                 resolve: {
                     foodbasketsPayload: function() {
