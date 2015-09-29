@@ -1,0 +1,30 @@
+[
+  {
+    "title":"Bananas",
+    "id": 1,
+    "user": {
+      "name":"John",
+      "id": 100
+      },
+    "description": "Lots of Bananas!",
+    "position": {
+      "name":"Malo",
+      "north": 45.666667,
+      "east": 11.416667
+    }
+  },
+  {
+    "title":"Apples",
+    "id": 2,
+    "user": {
+      "name":"Jane",
+      "id": 112
+      },
+    "description": "Beautiful Apples",
+    "position": {
+      "name":"Vicenza",
+      "north": 45.55,
+      "east": 11.55
+    }
+  }
+]
