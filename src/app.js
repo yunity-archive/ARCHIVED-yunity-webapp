@@ -18,7 +18,7 @@ require('angular-ui-router');
         $stateProvider
             .state('home', {
                 url: '/',
-                templateUrl: staticURL('src/components/foodbaskets/foodbaskets.html'),
+                template: require('../src/components/foodbaskets/foodbaskets.html'),
                 controller: 'mainCtrl',
                 resolve: {
                     foodbasketsPayload: function() {
@@ -37,7 +37,7 @@ require('angular-ui-router');
             })
             .state('about', {
                 url: '/about',
-                templateUrl: staticURL('src/components/about/about.html'),
+                template: require('../src/components/about/about.html'),
                 controller: 'SampleController',
                 resolve: {
                     // someHTML: function ($http) {
