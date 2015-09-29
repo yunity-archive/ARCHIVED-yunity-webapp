@@ -1,4 +1,8 @@
-@navbar-height: 50px;
+@header-height: 50px;
+@footer-height: 40px;
+@padding-header-top: 10px;
+@padding-header-bottom: 10px;
+@header-footer-color: #009900;
 
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
   margin: 0;
@@ -16,30 +20,32 @@ circle {
 }
 
 #navbar{
-    float: right;
-  }
+  float: right;
+  margin-right: 10px;
+}
+
+#hide-map-button {
+  margin-right: 10px;
+  width: 50px;
+}
 
 #searchbar {
-  margin: 10px;
-    float: left;
-  }
+  margin-left: 10px;
+  float: left;
+}
 #logo {
-  margin: 5px;
   width: 200px;
   height: 50px;
   float: left;
 }
 
-#navigation {
-  display: inline;
-  padding: 20px;
-}
-
 #header {
-  background-color: dodgerblue;
+  display: inline;
+  padding: @padding-header-top 10px @padding-header-bottom 10px;
+  background-color: @header-footer-color;
   background-attachment: scroll, fixed;
   color: rgba(255, 255, 255, 0.5);
-  height: @navbar-height;
+  height: @header-height;
   text-align: left;
   width: 100%;
   position: fixed;
@@ -49,7 +55,7 @@ circle {
 }
 
 #main-wrapper {
-  margin-top: @navbar-height;
+  margin-top: calc(@header-height + @padding-header-bottom + @padding-header-top);
   position: fixed;
   height: 100%;
   width: 100%;
@@ -91,7 +97,7 @@ circle {
   padding: 0 4em 0 0;
   position: fixed;
   text-align: left;
-  background-color: green;
+  background-color: @header-footer-color;
   color: black;
 }
 
