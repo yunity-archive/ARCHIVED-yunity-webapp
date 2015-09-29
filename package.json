@@ -25,7 +25,11 @@
     "mocha-babel": "^3.0.0",
     "should": "^7.0.2",
     "style-loader": "^0.12.3",
-    "webpack-dev-server": "^1.12.0"
+    "webpack-dev-server": "^1.12.0",
+    "angular-strap": "^2.3.3",
+    "angular-motion": "^0.4.3",
+    "angular-animate": "^1.5.0-beta.0",
+    "angular-sanitize": "^1.5.0-beta.0"
   },
   "dependencies": {}
 }

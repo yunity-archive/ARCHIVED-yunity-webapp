@@ -1,5 +1,9 @@
 var angular = require('angular');
 require('angular-ui-router');
+require('angular-animate');
+require('angular-sanitize');
+require('angular-strap');
+
 
 (function () {
 
@@ -8,7 +12,7 @@ require('angular-ui-router');
     }
 
     var yunity = angular.module('yunity', [
-        'ui.router',
+        'ui.router','ngAnimate', 'ngSanitize', 'mgcrea.ngStrap'
     ]);
 
     yunity.config(function($stateProvider, $urlRouterProvider) {
@@ -17,7 +21,7 @@ require('angular-ui-router');
 
         $stateProvider
             .state('home', {
-                url: '/',
+                url: '/home',
                 template: require('../src/components/foodbaskets/foodbaskets.html'),
                 controller: 'mainCtrl',
                 resolve: {
