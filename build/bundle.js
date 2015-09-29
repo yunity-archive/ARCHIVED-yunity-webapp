@@ -47,36 +47,36 @@
   \***********************/
 /***/ function(module, exports, __webpack_require__) {
 
+	'use strict';
 	
-	__webpack_require__(/*! ./less/main.less */ 1);
+	__webpack_require__(/*! ./assets/less/main.less */ 1);
 	
-	__webpack_require__(/*! ./js/app */ 5);
-	__webpack_require__(/*! ./js/sampleController */ 9);
-	__webpack_require__(/*! ./js/mainCtrl */ 10);
-	__webpack_require__(/*! ./js/mapCtrl */ 12);
-
+	__webpack_require__(/*! ./app */ 5);
+	__webpack_require__(/*! ./components/about/controller */ 9);
+	__webpack_require__(/*! ./components/main/controller */ 10);
+	__webpack_require__(/*! ./components/map/controller */ 11);
 
 /***/ },
 /* 1 */
-/*!****************************!*\
-  !*** ./src/less/main.less ***!
-  \****************************/
+/*!***********************************!*\
+  !*** ./src/assets/less/main.less ***!
+  \***********************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(/*! !./../../~/css-loader!./../../~/less-loader!./main.less */ 2);
+	var content = __webpack_require__(/*! !./../../../~/css-loader!./../../../~/less-loader!./main.less */ 2);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(/*! ./../../~/style-loader/addStyles.js */ 4)(content, {});
+	var update = __webpack_require__(/*! ./../../../~/style-loader/addStyles.js */ 4)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/less-loader/index.js!./main.less", function() {
-				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/less-loader/index.js!./main.less");
+			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/less-loader/index.js!./main.less", function() {
+				var newContent = require("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/less-loader/index.js!./main.less");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -87,12 +87,12 @@
 
 /***/ },
 /* 2 */
-/*!***********************************************************!*\
-  !*** ./~/css-loader!./~/less-loader!./src/less/main.less ***!
-  \***********************************************************/
+/*!******************************************************************!*\
+  !*** ./~/css-loader!./~/less-loader!./src/assets/less/main.less ***!
+  \******************************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(/*! ./../../~/css-loader/lib/css-base.js */ 3)();
+	exports = module.exports = __webpack_require__(/*! ./../../../~/css-loader/lib/css-base.js */ 3)();
 	// imports
 	
 	
@@ -391,9 +391,9 @@
 
 /***/ },
 /* 5 */
-/*!***********************!*\
-  !*** ./src/js/app.js ***!
-  \***********************/
+/*!********************!*\
+  !*** ./src/app.js ***!
+  \********************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -415,7 +415,7 @@
 	
 	        $stateProvider.state('home', {
 	            url: '/',
-	            templateUrl: staticURL('foodbaskets.html'),
+	            templateUrl: staticURL('src/components/foodbaskets/foodbaskets.html'),
 	            controller: 'mainCtrl',
 	            resolve: {
 	                foodbasketsPayload: function foodbasketsPayload() {
@@ -433,7 +433,7 @@
 	            }
 	        }).state('about', {
 	            url: '/about',
-	            templateUrl: staticURL('about.html'),
+	            templateUrl: staticURL('src/components/about/about.html'),
 	            controller: 'SampleController',
 	            resolve: {
 	                // someHTML: function ($http) {
@@ -33672,9 +33672,9 @@
 
 /***/ },
 /* 9 */
-/*!************************************!*\
-  !*** ./src/js/sampleController.js ***!
-  \************************************/
+/*!********************************************!*\
+  !*** ./src/components/about/controller.js ***!
+  \********************************************/
 /***/ function(module, exports) {
 
 	'use strict';
@@ -33692,9 +33692,9 @@
 
 /***/ },
 /* 10 */
-/*!****************************!*\
-  !*** ./src/js/mainCtrl.js ***!
-  \****************************/
+/*!*******************************************!*\
+  !*** ./src/components/main/controller.js ***!
+  \*******************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -33714,6 +33714,38 @@
 
 /***/ },
 /* 11 */
+/*!******************************************!*\
+  !*** ./src/components/map/controller.js ***!
+  \******************************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	var angular = __webpack_require__(/*! angular */ 6);
+	var L = __webpack_require__(/*! leaflet */ 12);
+	
+	angular.module('yunity').controller('mapCtrl', ['$scope', '$http', function ($scope, $html) {
+	
+	    var hideMap = false;
+	
+	    $scope.bodyClass = {
+	        'hide-map': hideMap
+	    };
+	
+	    $scope.toggleMap = function () {
+	        hideMap = !hideMap;
+	        $scope.bodyClass['hide-map'] = !$scope.bodyClass['hide-map'];
+	    };
+	
+	    var map = L.map('map').setView([51.505, -0.09], 13);
+	
+	    L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+	        attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+	    }).addTo(map);
+	}]);
+
+/***/ },
+/* 12 */
 /*!***************************************!*\
   !*** ./~/leaflet/dist/leaflet-src.js ***!
   \***************************************/
@@ -42882,38 +42914,6 @@
 	
 	
 	}(window, document));
-
-/***/ },
-/* 12 */
-/*!***************************!*\
-  !*** ./src/js/mapCtrl.js ***!
-  \***************************/
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	var angular = __webpack_require__(/*! angular */ 6);
-	var L = __webpack_require__(/*! leaflet */ 11);
-	
-	angular.module('yunity').controller('mapCtrl', ['$scope', '$http', function ($scope, $html) {
-	
-	    var hideMap = false;
-	
-	    $scope.bodyClass = {
-	        'hide-map': hideMap
-	    };
-	
-	    $scope.toggleMap = function () {
-	        hideMap = !hideMap;
-	        $scope.bodyClass['hide-map'] = !$scope.bodyClass['hide-map'];
-	    };
-	
-	    var map = L.map('map').setView([51.505, -0.09], 13);
-	
-	    L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-	        attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-	    }).addTo(map);
-	}]);
 
 /***/ }
 /******/ ]);
