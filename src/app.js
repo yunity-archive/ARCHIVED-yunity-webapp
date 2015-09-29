@@ -4,7 +4,6 @@ require('angular-animate');
 require('angular-sanitize');
 require('angular-strap');
 
-
 (function () {
 
     function staticURL (uri) {
