@@ -1,7 +1,7 @@
 
-require('./less/main.less');
+require('./assets/less/main.less');
 
-require('./js/app');
-require('./js/sampleController');
-require('./js/mainCtrl');
-require('./js/mapCtrl');
+require('./app');
+require('./components/about/controller');
+require('./components/main/controller');
+require('./components/map/controller');

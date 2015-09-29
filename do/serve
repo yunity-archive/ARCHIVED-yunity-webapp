@@ -1,3 +1,3 @@
 #!/bin/sh
 
-webpack-dev-server src/_entry.js --inline --content-base www/
+webpack-dev-server src/_entry.js --inline --content-base .
