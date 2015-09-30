@@ -1,5 +1,5 @@
 var angular = require('angular');
-var home = require("html!./home.html");
+var homeTemplate = require('ngtemplate!./home.html');
 
 angular.module('yunity').controller('mainCtrl', [
     '$scope','$rootScope', '$http', 'foodbasketsPayload',
@@ -17,8 +17,8 @@ angular.module('yunity').controller('mainCtrl', [
         $scope.tabs = [
             {
                 title: 'Home',
-                content: 'Raw denim you probably haven\'t heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica.',
-                template: 'foo.html'
+                template: homeTemplate
+
             },
             {title: 'Search', template: 'foo.html', content:'content'},
             {
