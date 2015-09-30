@@ -1,9 +1,13 @@
 var angular = require('angular');
 var homeTemplate = require('ngtemplate!./home.html');
+var aboutTemplate = require('ngtemplate!../about/about.html');
+var searchTemplate = require('ngtemplate!../search/search.html');
+var profileTemplate = require('ngtemplate!../profile/profile.html');
+
 
 angular.module('yunity').controller('mainCtrl', [
-    '$scope','$rootScope', '$http', 'foodbasketsPayload',
-    function ($scope,$rootScope, $http, foodbasketsPayload) {
+    '$scope', '$rootScope', '$http', 'foodbasketsPayload',
+    function ($scope, $rootScope, $http, foodbasketsPayload) {
 
         // $scope.foodbaskets = [];
         $scope.foodbaskets = foodbasketsPayload;
@@ -20,16 +24,17 @@ angular.module('yunity').controller('mainCtrl', [
                 template: homeTemplate
 
             },
-            {title: 'Search', template: 'foo.html', content:'content'},
+            {
+                title: 'Search',
+                template: searchTemplate
+            },
             {
                 title: 'Profile',
-                content: 'Food truck fixie locavore, accusamus mcsweeney\'s marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee.',
-                template: 'foo.html'
+                template: profileTemplate
             },
             {
                 title: 'About',
-                content: 'Etsy mixtape wayfarers, ethical wes anderson tofu before they sold out mcsweeney\'s organic lomo retro fanny pack lo-fi farm-to-table readymade.',
-                template: 'foo.html'
+                template: aboutTemplate
             }
         ];
         $scope.tabs.activeTab = "Home";
