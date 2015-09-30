@@ -7,4 +7,3 @@ require('./components/main/controller');
 require('./components/map/controller');
 require('./components/search/controller');
 require('./shared/translate/controller');
-require("../node_modules/angular-strap/src/tab/tab.js");
