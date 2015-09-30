@@ -9,50 +9,58 @@
     <title>YUNITY</title>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.5/leaflet.css" />
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.5/leaflet.css"/>
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <!--[if lte IE 8]>
     <script src="assets/js/ie/html5shiv.js"></script><![endif]-->
     <!--[if lte IE 8]>
     <link rel="stylesheet" href="assets/css/ie8.css"/><![endif]-->
 </head>
-<body data-ng-app="yunity" ng-class="bodyClass"  ng-controller="mapCtrl">
-    <!-- Header -->
-    <div id="header">
-        <a ui-sref="home">
-            <img id="logo" ng-src="placeholder.png" alt="YUNITY Logo"/>
-        </a>
+<body data-ng-app="yunity" ng-class="bodyClass" ng-controller="mapCtrl">
+<!-- Header -->
+<div id="header">
+    <a ui-sref="home">
+        <img id="logo" ng-src="placeholder.png" alt="YUNITY Logo"/>
+    </a>
 
-        <div id="searchbar" class="input-group input-group-lg">
-            <input type="search"  class="form-control" ng-controller="searchCtrl" ng-model="searchResults" data-animation="am-flip-x" bs-options="address.formatted_address as address.formatted_address for address in getSearch($viewValue)" placeholder="Search" bs-typeahead>
+    <div id="searchbar" class="input-group input-group-lg">
+        <form ng-submit="submit()"  ng-controller="searchCtrl" class="input-group input-group-lg" >
+            <input type="search" class="form-control" ng-model="searchTag"
+                   data-animation="am-flip-x"
+                   bs-options="address.formatted_address as address.formatted_address for address in getSearch($viewValue)"
+                   placeholder="Search" bs-typeahead>
             <span class="input-group-btn">
-                <button class="btn btn-default" type="button">Go!</button>
+                <button class="btn btn-default" ng-click="submit()" type="button">Go!</button>
             </span>
-        </div>
-        
-        <input id="hide-map-button" type="button" class="btn btn-primary btn-lg" ng-click="toggleMap()" value="Toggle Map"></br>
-
+        </form>
     </div>
 
-    <div id="main-wrapper" >
+    <input id="hide-map-button" type="button" class="btn btn-primary btn-lg" ng-click="toggleMap()"
+           value="Toggle Map"></br>
 
-        <div id="map-wrapper">
-            <div id="map"></div>
-        </div>
+</div>
 
-        <!-- Main -->
-        <div id="main" ui-view>
-            <div bs-active-pane="tabs.activeTab" bs-tabs>
-                <div ng-repeat="tab in tabs" title="{{ tab.title }}" name="{{ tab.title }}" disabled="{{ tab.disabled }}" ng-bind="tab.content" bs-pane>
+<div id="main-wrapper">
+
+    <div id="map-wrapper">
+        <div id="map"></div>
+    </div>
+
+    <!-- Main -->
+    <div id="main" ui-view>
+        <div bs-active-pane="tabs.activeTab" bs-tabs>
+            <div ng-repeat="tab in tabs" title="{{ tab.title }}" name="{{ tab.title }}"
+                  ng-include="tab.template"  bs-pane>
             </div>
-    </div>
         </div>
+
     </div>
+</div>
 
-    <!-- Footer -->
-    <footer id="footer"><a ui-sref="about">About page</a></footer>
+<!-- Footer -->
+<footer id="footer"><a ui-sref="about">About page</a></footer>
 
-    <script type="text/javascript" src="build/bundle.js"></script>
+<script type="text/javascript" src="build/bundle.js"></script>
 
 </body>
 </html>
