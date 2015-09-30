@@ -6,16 +6,14 @@ var profileTemplate = require('ngtemplate!../profile/profile.html');
 
 
 angular.module('yunity').controller('mainCtrl', [
-    '$scope', '$rootScope', '$http', 'foodbasketsPayload',
-    function ($scope, $rootScope, $http, foodbasketsPayload) {
+    '$scope', '$http',
+    function ($scope, $http) {
 
-        // $scope.foodbaskets = [];
-        $scope.foodbaskets = foodbasketsPayload;
-        $rootScope.searchResults = [];
+        $scope.searchResults = [];
 
-        $rootScope.$on("displaySearchResult", function (event, args) {
+        $scope.$on("displaySearchResult", function (event, args) {
             $scope.tabs.activeTab = "Search";
-            $rootScope.searchResults = args.result;
+            $scope.searchResults = args.result;
         });
 
         $scope.tabs = [
