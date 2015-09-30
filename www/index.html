@@ -56,10 +56,12 @@
 
     <!-- Footer -->
     <footer ng-controller="LanguageCtrl" id="footer">
-        <a translate="ABOUT_PAGE" ui-sref="about"></a> - 
-        <p translate="SWITCH_LANGUAGE"></p>
-        <a href="" ng-click="changeLang('en_US')">{{ 'ENGLISH' | translate }}</a>
-        <a href="" ng-click="changeLang('de_DE')">{{ 'GERMAN' | translate }}</a>
+        <ul id="lang-switcher">
+            <li><a translate="ABOUT_PAGE" ui-sref="about"></a></li> 
+            <li>{{ "SWITCH_LANGUAGE" | translate }}:</li>
+            <li><a href="" ng-click="changeLang('en_US')">{{ 'ENGLISH' | translate }}</a></li>
+            <li><a href="" ng-click="changeLang('de_DE')">{{ 'GERMAN' | translate }}</a></li>
+        </ul>
     </footer>
 
     <script type="text/javascript" src="build/bundle.js"></script>
