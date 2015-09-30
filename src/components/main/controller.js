@@ -29,10 +29,6 @@ angular.module('yunity').controller('mainCtrl', [
             {
                 title: 'Profile',
                 template: profileTemplate
-            },
-            {
-                title: 'About',
-                template: aboutTemplate
             }
         ];
         $scope.tabs.activeTab = "Home";
