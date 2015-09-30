@@ -3,6 +3,7 @@ require('angular-ui-router');
 require('angular-animate');
 require('angular-sanitize');
 require('angular-strap');
+require('angular-translate');
 
 (function () {
 
@@ -11,7 +12,7 @@ require('angular-strap');
     }
 
     var yunity = angular.module('yunity', [
-        'ui.router','ngAnimate', 'ngSanitize', 'mgcrea.ngStrap'
+        'ui.router','ngAnimate', 'ngSanitize', 'mgcrea.ngStrap', 'pascalprecht.translate'
     ]);
 
     yunity.config(function($stateProvider, $urlRouterProvider) {
