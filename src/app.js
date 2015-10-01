@@ -1,9 +1,12 @@
-var angular = require('angular');
+// require('angular');
+// window.angular = angular;
+// console.log('Set window.angular to ', angular); // https://github.com/yunity/yunity-webapp/issues/15
 require('angular-ui-router');
 require('angular-animate');
 require('angular-sanitize');
 require('angular-strap');
 require('angular-translate');
+import yunityAPI from 'yunity-webapp-common/api';
 
 (function () {
 
@@ -12,7 +15,12 @@ require('angular-translate');
     }
 
     var yunity = angular.module('yunity', [
-        'ui.router','ngAnimate', 'ngSanitize', 'mgcrea.ngStrap', 'pascalprecht.translate'
+        'ui.router',
+        'ngAnimate',
+        'ngSanitize',
+        'mgcrea.ngStrap',
+        'pascalprecht.translate',
+        'yunityAPI'
     ]);
 
     yunity.config(function($stateProvider, $urlRouterProvider) {

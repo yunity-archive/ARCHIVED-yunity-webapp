@@ -1,3 +1,4 @@
+var webpack = require('webpack');
 var path = require('path');
 module.exports = {
     entry: './src/_entry.js',
@@ -5,12 +6,22 @@ module.exports = {
         path: __dirname,
         filename: './www/build/bundle.js'
     },
+    plugins: [
+        new webpack.optimize.OccurenceOrderPlugin(true)
+    ],
+    // resolve: {
+    //     extensions: ['', '.js'],
+    //     root: [
+    //         __dirname + '/node_modules'
+    //     ]
+    // },
     module: {
         loaders: [
             {
-                test: /\.js$/,
-                include: path.resolve(__dirname, 'src'),
-                loader: 'babel'
+                test: /\.jsx?$/,
+                // TODO(ns): need to include the yunity-webapp-common when it is not npm link'd
+                exclude: /(node_modules|bower_components)/,
+                loaders: ['babel-loader']
             },
             {
                 test: /\.html$/,
