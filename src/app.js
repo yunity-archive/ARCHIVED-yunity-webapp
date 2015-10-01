@@ -1,6 +1,4 @@
-// require('angular');
-// window.angular = angular;
-// console.log('Set window.angular to ', angular); // https://github.com/yunity/yunity-webapp/issues/15
+import angular from 'angular';
 require('angular-ui-router');
 require('angular-animate');
 require('angular-sanitize');
