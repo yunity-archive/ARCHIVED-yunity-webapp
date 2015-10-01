@@ -10,5 +10,8 @@
     "SEARCH_PAGE":		"Search",
     "PROFILE":    		"Profile",
     "AWESOME":    		"Awesome!!",
-    "SEARCH_RESULTS":	"Search results"
+    "SEARCH_RESULTS":	"Search results",
+    "LOGIN":            "Login",
+    "EMAIL":            "Email",
+    "PASSWORD":         "Password"
 }
