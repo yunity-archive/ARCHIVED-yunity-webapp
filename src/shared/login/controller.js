@@ -1,12 +1,9 @@
-var angular = require('angular');
+import angular from 'angular';
 
-angular.module('yunity').controller('loginCtrl', ['$scope', 'yunityAPI', function($scope, yunityAPI) {
+angular.module('yunity').controller('LoginCtrl', ['$scope', '$yunityAPI', function($scope, $yunityAPI) {
 
-        var email = "";
-        var password = "";
-
-        var submit = function() {
-            console.log("Login with ", email, " and ", password);
+        $scope.submitLoginCredentials = function() {
+            $yunityAPI.authenticate($scope.email, $scope.password);
         }
 
     }]);

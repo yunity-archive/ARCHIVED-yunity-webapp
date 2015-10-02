@@ -36,11 +36,11 @@
         </div>
 
         <div id="login-form">
-            <form ng-submit="submit()"  class="input-group input-group-lg" >
-                <input type="email" class="mail-field inline form-control" ng-model="searchTag" placeholder="{{ 'EMAIL' | translate }}">
-                <input type="password" class="password-field inline form-control" ng-model="searchTag" placeholder="{{ 'PASSWORD' | translate }}">
+            <form ng-controller="LoginCtrl" ng-submit="submitLoginCredentials()"  class="input-group input-group-lg" >
+                <input type="email" class="mail-field form-control" ng-model="email" placeholder="{{ 'EMAIL' | translate }}">
+                <input type="password" class="password-field form-control" ng-model="password" placeholder="{{ 'PASSWORD' | translate }}">
                 <span class="input-group-btn">
-                   <button class="btn btn-default" ng-click="submit()" type="button">{{ "LOGIN" | translate }}</button>
+                   <button class="btn btn-default" type="submit">{{ "LOGIN" | translate }}</button>
                 </span>
             </form>
         </div>
