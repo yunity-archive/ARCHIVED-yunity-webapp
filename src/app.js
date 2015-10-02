@@ -5,6 +5,7 @@ require('angular-sanitize');
 require('angular-strap');
 require('angular-translate');
 import yunityAPI from 'yunity-webapp-common/api';
+import yunityMap from 'yunity-webapp-common/map';
 
 (function () {
 
@@ -18,7 +19,8 @@ import yunityAPI from 'yunity-webapp-common/api';
         'ngSanitize',
         'mgcrea.ngStrap',
         'pascalprecht.translate',
-        'yunityAPI'
+        'yunityAPI',
+        'yunityMap'
     ]);
 
     yunity.config(function($stateProvider, $urlRouterProvider) {
