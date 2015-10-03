@@ -1,9 +1,10 @@
 import angular from 'angular';
+import 'angular-ui-bootstrap';
 require('angular-ui-router');
 require('angular-animate');
 require('angular-sanitize');
-require('angular-strap');
 require('angular-translate');
+
 import yunityAPI from 'yunity-webapp-common/api';
 import yunityMap from 'yunity-webapp-common/map';
 import yunityTranslate from 'yunity-webapp-common/translate';
@@ -16,10 +17,10 @@ import yunityTranslate from 'yunity-webapp-common/translate';
     }
 
     var yunity = angular.module('yunity', [
+        'ui.bootstrap',
         'ui.router',
         'ngAnimate',
         'ngSanitize',
-        'mgcrea.ngStrap',
         'yunityAPI',
         'yunityMap',
         'yunityTranslate'
