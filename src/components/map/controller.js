@@ -1,5 +1,4 @@
 /*
-var angular = require('angular');
 var L = require('leaflet');
 */
 angular.module('yunity').controller('mapCtrl', ['$scope', '$http', function($scope, $html) {

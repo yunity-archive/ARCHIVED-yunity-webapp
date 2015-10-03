@@ -6,6 +6,7 @@ require('angular-strap');
 require('angular-translate');
 import yunityAPI from 'yunity-webapp-common/api';
 import yunityMap from 'yunity-webapp-common/map';
+import yunityChat from 'yunity-webapp-common/chat';
 
 (function () {
 

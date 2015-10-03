@@ -1,4 +1,3 @@
-var angular = require('angular');
 var homeTemplate = require('ngtemplate!./home.html');
 var aboutTemplate = require('ngtemplate!../about/about.html');
 var searchTemplate = require('ngtemplate!../search/search.html');

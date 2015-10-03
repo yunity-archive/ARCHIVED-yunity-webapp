@@ -1,6 +1,3 @@
-var angular = require('angular');
-
-
 angular.module('yunity').controller('searchCtrl', ['$scope', '$rootScope', '$http', function ($scope, $rootScope, $http) {
 
     $scope.list = [];
