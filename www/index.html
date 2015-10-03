@@ -1,9 +1,4 @@
 <!DOCTYPE html>
-<!--
-    Strata by HTML5 UP
-    html5up.net | @n33co
-    Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
 <html lang="en">
 <head>
     <title>YUNITY</title>
@@ -11,10 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.5/leaflet.css" />
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-    <!--[if lte IE 8]>
-    <script src="assets/js/ie/html5shiv.js"></script><![endif]-->
-    <!--[if lte IE 8]>
-    <link rel="stylesheet" href="assets/css/ie8.css"/><![endif]-->
 </head>
 <body data-ng-app="yunity" ng-class="bodyClass"  ng-controller="mapCtrl">
     <!-- Header -->
@@ -23,31 +14,9 @@
             <img id="logo" ng-src="placeholder.png" alt="YUNITY Logo"/>
         </a>
 
-        <div id="searchbar">
-            <form ng-submit="submit()"  ng-controller="searchCtrl" class="input-group input-group-lg" >
-                    <input type="search" class="form-control" ng-model="searchTag" placeholder="Locations loaded via $http" typeahead="address.formatted_address as address.formatted_address for address in getSearch($viewValue)" typeahead-loading="loadingLocations" typeahead-no-results="noResults" class="form-control">
-                        <!-- <i ng-show="loadingLocations" class="glyphicon glyphicon-refresh"></i> -->
-                    <!-- <div ng-show="noResults">
-                            <i class="glyphicon glyphicon-remove"></i> No Results Found
-                    </div> -->
-                    <span class="input-group-btn">
-                            <button class="btn btn-default" ng-click="submit()" type="button">{{ "GO" | translate }}</button>
-                    </span>
-            </form>
-        </div>
+        <div search></div>
 
-        <div id="login-form">
-            <form ng-controller="LoginCtrl" ng-submit="submitLoginCredentials()"  class="input-group input-group-lg" >
-                <input type="email" class="mail-field form-control" ng-model="credentials.email" placeholder="{{ 'EMAIL' | translate }}">
-                <input type="password" class="password-field form-control" ng-model="credentials.password" placeholder="{{ 'PASSWORD' | translate }}">
-                <span class="input-group-addon">
-                    <input type="checkbox" ng-model="credentials.rememberMe" tooltip-animation="false" tooltip-placement="left" tooltip="Remember me?"/>
-                </span>
-                <span class="input-group-btn">
-                   <button class="btn btn-default" type="submit">{{ "LOGIN" | translate }}</button>
-                </span>
-            </form>
-        </div>
+        <div login></div>
 
     </div>
 

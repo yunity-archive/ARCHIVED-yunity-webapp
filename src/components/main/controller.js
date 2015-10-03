@@ -1,6 +1,6 @@
 var homeTemplate = require('ngtemplate!./home.html');
 var aboutTemplate = require('ngtemplate!../about/about.html');
-var searchTemplate = require('ngtemplate!../search/search.html');
+var searchTemplate = require('ngtemplate!../search/search_results.html');
 var profileTemplate = require('ngtemplate!../profile/profile.html');
 
 
