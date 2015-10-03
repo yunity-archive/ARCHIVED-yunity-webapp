@@ -18,7 +18,7 @@
 </head>
 <body data-ng-app="yunity" ng-class="bodyClass"  ng-controller="mapCtrl">
     <!-- Header -->
-    <div id="header" ng-controller="LanguageCtrl">
+    <div id="header">
         <a ui-sref="home">
             <img id="logo" ng-src="placeholder.png" alt="YUNITY Logo"/>
         </a>
@@ -69,12 +69,11 @@
     </div>
 
     <!-- Footer -->
-    <footer ng-controller="LanguageCtrl" id="footer">
+    <footer id="footer">
         <ul id="lang-switcher">
-            <li><a translate="ABOUT_PAGE" ui-sref="about"></a></li> 
+            <li><a translate="ABOUT_PAGE" ui-sref="about"></a></li>
             <li>{{ "SWITCH_LANGUAGE" | translate }}:</li>
-            <li><a href="" ng-click="changeLang('en_US')">{{ 'ENGLISH' | translate }}</a></li>
-            <li><a href="" ng-click="changeLang('de_DE')">{{ 'GERMAN' | translate }}</a></li>
+            <div language-links></div>
         </ul>
     </footer>
 
