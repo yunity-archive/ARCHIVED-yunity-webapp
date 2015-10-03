@@ -1,13 +1,13 @@
-angular.module('yunity').controller('searchCtrl', ['$scope', '$rootScope', '$http', function ($scope, $rootScope, $http) {
+angular.module('yunity').controller('searchCtrl', ['$scope', '$rootScope', '$http', ($scope, $rootScope, $http) => {
 
     $scope.list = [];
 
 
-    $scope.submit = function () {
+    $scope.submit = () => {
         if ($scope.searchTag) {
             var params = {address: $scope.searchTag, sensor: false};
             return $http.get('http://maps.googleapis.com/maps/api/geocode/json', {params: params})
-                .then(function (res) {
+                .then( res => {
                     $scope.list = res.data.results;
                     $rootScope.$broadcast("displaySearchResult", {result: $scope.list});
                 });
@@ -16,10 +16,10 @@ angular.module('yunity').controller('searchCtrl', ['$scope', '$rootScope', '$htt
     };
 
 
-        $scope.getSearch = function (viewValue) {
+        $scope.getSearch = viewValue => {
             var params = {address: viewValue, sensor: false};
             return $http.get('http://maps.googleapis.com/maps/api/geocode/json', {params: params})
-                .then(function (res) {
+                .then( res => {
                     return res.data.results;
                 });
         };

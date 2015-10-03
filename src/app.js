@@ -1,22 +1,21 @@
 import angular from 'angular';
-import 'angular-ui-bootstrap';
-require('angular-ui-router');
-require('angular-animate');
-require('angular-sanitize');
-require('angular-translate');
-
+import 'angular-ui-bootstrap';;
+import 'angular-ui-router';
+import 'angular-animate';
+import 'angular-sanitize';
+import 'angular-translate';
 import yunityAPI from 'yunity-webapp-common/api';
 import yunityMap from 'yunity-webapp-common/map';
 import yunityTranslate from 'yunity-webapp-common/translate';
-//import yunityChat from 'yunity-webapp-common/chat';
+//import yunityChat from 'yunity-webapp-common/chat'; //does not work yet
 
-(function () {
+{
 
-    function staticURL (uri) {
+    let staticURL = (uri) => {
         return uri;
     }
 
-    var yunity = angular.module('yunity', [
+     let yunity = angular.module('yunity', [
         'ui.bootstrap',
         'ui.router',
         'ngAnimate',
@@ -26,7 +25,7 @@ import yunityTranslate from 'yunity-webapp-common/translate';
         'yunityTranslate'
     ]);
 
-    yunity.config(function($stateProvider, $urlRouterProvider) {
+    yunity.config(($stateProvider, $urlRouterProvider) => {
 
         $urlRouterProvider.otherwise('/');
 
@@ -36,7 +35,7 @@ import yunityTranslate from 'yunity-webapp-common/translate';
                 //template: require('../src/components/foodbaskets/foodbaskets.html'),
                 controller: 'mainCtrl',
                 resolve: {
-                    foodbasketsPayload: function() {
+                    foodbasketsPayload: () => {
                         return [{
                             title: 'Banana basket',
                             description: 'fresh, bright yellow bananas',
@@ -53,14 +52,14 @@ import yunityTranslate from 'yunity-webapp-common/translate';
             .state('about', {
                 url: '/about',
                 template: require('../src/components/about/about.html'),
-                controller: 'SampleController',
+                controller: 'AboutCtrl',
                 resolve: {
                     // someHTML: function ($http) {
                     //     return $http.get('http://localhost:8000/api/login');
                     // },
-                    aNumber: function() { return 42 },
+                    aNumber: () => { return 42 },
                 },
             })
     });
 
-}());
+}
