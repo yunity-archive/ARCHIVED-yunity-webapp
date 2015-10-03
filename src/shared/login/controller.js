@@ -1,7 +1,7 @@
 angular.module('yunity').directive('login', () => {
     return {
         restrict: 'A',
-        templateUrl: 'assets/templates/login.html',
+        template: require('./login.html'),
         controller: function($scope, $yunityAPI)
         {
             $scope.rememberMeTooltip = {title: 'Remember me'};

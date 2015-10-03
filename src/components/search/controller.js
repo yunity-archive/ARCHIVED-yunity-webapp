@@ -1,7 +1,8 @@
 angular.module('yunity').directive('search', () => {
     return {
         restrict: 'A',
-        templateUrl: 'assets/templates/search.html',
+        //template: require('../src/components/search/search.html'),
+        template: require('./search.html'),
         controller: function($scope, $rootScope, $http)
         {
             $scope.list = [];

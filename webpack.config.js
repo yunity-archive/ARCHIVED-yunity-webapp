@@ -21,7 +21,7 @@ module.exports = {
             },
             {
                 test: /\.html$/,
-                include: path.resolve(__dirname, 'src/components'),
+                include: path.resolve(__dirname, 'src'),
                 loader: 'html'
             },
             {
