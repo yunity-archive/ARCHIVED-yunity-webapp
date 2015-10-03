@@ -6,7 +6,8 @@ require('angular-strap');
 require('angular-translate');
 import yunityAPI from 'yunity-webapp-common/api';
 import yunityMap from 'yunity-webapp-common/map';
-import yunityChat from 'yunity-webapp-common/chat';
+import yunityTranslate from 'yunity-webapp-common/translate';
+//import yunityChat from 'yunity-webapp-common/chat';
 
 (function () {
 
@@ -19,9 +20,9 @@ import yunityChat from 'yunity-webapp-common/chat';
         'ngAnimate',
         'ngSanitize',
         'mgcrea.ngStrap',
-        'pascalprecht.translate',
         'yunityAPI',
-        'yunityMap'
+        'yunityMap',
+        'yunityTranslate'
     ]);
 
     yunity.config(function($stateProvider, $urlRouterProvider) {
