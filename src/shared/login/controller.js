@@ -1,10 +1,10 @@
 import angular from 'angular';
 
-angular.module('yunity').config(function($tooltipProvider) {
-  angular.extend($tooltipProvider.defaults, {
-    html: true
-  });
-})
+// angular.module('yunity').config(function($tooltipProvider) {
+//   angular.extend($tooltipProvider.defaults, {
+//     html: true
+//   });
+// })
 
 angular.module('yunity').controller('LoginCtrl', ['$scope', '$yunityAPI', function($scope, $yunityAPI) {
 

@@ -1,8 +1,8 @@
 import angular from 'angular';
+import 'angular-ui-bootstrap';;
 import 'angular-ui-router';
 import 'angular-animate';
 import 'angular-sanitize';
-import 'angular-strap';
 import 'angular-translate';
 import yunityAPI from 'yunity-webapp-common/api';
 import yunityMap from 'yunity-webapp-common/map';
@@ -15,11 +15,11 @@ import yunityTranslate from 'yunity-webapp-common/translate';
         return uri;
     }
 
-    let yunity = angular.module('yunity', [
+     let yunity = angular.module('yunity', [
+        'ui.bootstrap',
         'ui.router',
         'ngAnimate',
         'ngSanitize',
-        'mgcrea.ngStrap',
         'yunityAPI',
         'yunityMap',
         'yunityTranslate'

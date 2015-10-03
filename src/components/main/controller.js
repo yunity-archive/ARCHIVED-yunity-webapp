@@ -1,7 +1,8 @@
 var homeTemplate = require('ngtemplate!./home.html');
 var aboutTemplate = require('ngtemplate!../about/about.html');
-var searchTemplate = require('ngtemplate!../search/search.html');
+var searchTemplate = require('ngtemplate!../search/search_results.html');
 var profileTemplate = require('ngtemplate!../profile/profile.html');
+
 
 
 angular.module('yunity').controller('mainCtrl', [
@@ -11,8 +12,9 @@ angular.module('yunity').controller('mainCtrl', [
         $scope.searchResults = [];
 
         $scope.$on("displaySearchResult", function (event, args) {
-            $scope.tabs.activeTab = "Search";
+            $scope.tabs[1].active = "true";
             $scope.searchResults = args.result;
+            console.log(args.result);
         });
 
         $scope.tabs = [
@@ -30,7 +32,7 @@ angular.module('yunity').controller('mainCtrl', [
                 template: profileTemplate
             }
         ];
-        $scope.tabs.activeTab = "Home";
+        $scope.tabs[0].active = "true";
 
 
         $http.get('http://localhost:3000/db').
