@@ -11,23 +11,12 @@
     <!-- Header -->
     <div id="header">
         <a ui-sref="home">
-            <img id="logo" ng-src="placeholder.png" alt="YUNITY Logo"/>
+            <img id="logo" ng-src="assets/img/placeholder.png" alt="YUNITY Logo"/>
         </a>
 
         <div search></div>
 
-        <div id="login-form">
-            <form ng-controller="LoginCtrl" ng-submit="submitLoginCredentials()"  class="input-group input-group-lg" >
-                <input type="email" class="mail-field form-control" ng-model="credentials.email" placeholder="{{ 'EMAIL' | translate }}">
-                <input type="password" class="password-field form-control" ng-model="credentials.password" placeholder="{{ 'PASSWORD' | translate }}">
-                <span class="input-group-addon">
-                    <input type="checkbox" ng-model="credentials.rememberMe" tooltip-animation="false" tooltip-placement="left" tooltip="Remember me?"/>
-                </span>
-                <span class="input-group-btn">
-                   <button class="btn btn-default" type="submit">{{ "LOGIN" | translate }}</button>
-                </span>
-            </form>
-        </div>
+        <div login></div>
 
     </div>
 
@@ -59,7 +48,7 @@
     <!-- Footer -->
     <footer id="footer">
         <ul id="lang-switcher">
-            <li><a translate="ABOUT_PAGE" ui-sref="about"></a></li>
+            <li><button ng-controller="AboutCtrl" type="button" class="btn btn-default" ng-click="open('lg')">{{ "ABOUT_PAGE" | translate }}</button></li>
             <li>{{ "SWITCH_LANGUAGE" | translate }}:</li>
             <div language-links></div>
         </ul>

@@ -14,14 +14,14 @@ module.exports = {
             {
                 test: /\.jsx?$/,
                 include: [
-                    path.resolve(__dirname, 'node_modules/yunity-webapp-common'),
+                    /\/yunity-webapp-common\//,
                     path.resolve(__dirname, 'src')
                 ],
                 loaders: ['babel-loader']
             },
             {
                 test: /\.html$/,
-                include: path.resolve(__dirname, 'src/components'),
+                include: path.resolve(__dirname, 'src'),
                 loader: 'html'
             },
             {
