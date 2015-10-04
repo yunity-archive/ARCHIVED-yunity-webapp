@@ -6,13 +6,13 @@ import angular from 'angular';
 //   });
 // })
 
-angular.module('yunity').controller('LoginCtrl', ['$scope', '$yunityAPI', function($scope, $yunityAPI) {
+angular.module('yunity').controller('LoginCtrl', ['$scope', 'yAPI', function($scope, yAPI) {
 
 	$scope.rememberMeTooltip = {title: 'Remember me'};
 
     $scope.submitLoginCredentials = function() {
     	console.log('Remember Me: ', $scope.credentials.rememberMe);
-        $yunityAPI.authenticate($scope.credentials.email, $scope.credentials.password);
+        yAPI.authenticate($scope.credentials.email, $scope.credentials.password);
     }
 
     }]);
