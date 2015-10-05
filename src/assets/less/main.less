@@ -100,18 +100,40 @@ a {
   }
 
   #login-form {
-    float: right;
-    margin-right: 20px;
-    width: 30%;
+    position:fixed;
+    right: 56px;
+    top: 15px;
+    width: 49%;
 
-    .mail-field {
-      width: 50%;
-      margin-right: 0px;
+    #email-textfield {
+      display: inline;
+      float:right;
+      margin-right: 6px;
+      height: 40px;
+      width: 192px;
     }
 
-    .password-field {
-      width: 50%;
+    #password-textfield {
+      display: inline;
+      float:right;
+      margin-right: 9.5px;
+      height: 40px;
+      width: 192px;
+    }
+
+    #remember-me-checkbox { // checkbox size is 16x16
+      display: inline;
+      margin-right: 9.5px;
+      margin-top: 12px;
+      float:right;
+    }
+
+    #login-button {
+      display: inline;
+      float:right;
       margin-right: 0px;
+      height: 40px;
+      width: 76px;
     }
   }
 }
