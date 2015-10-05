@@ -1,7 +1,7 @@
 
             <form id="login-form" ng-submit="submitLoginCredentials()" >
-                <button id="login-button" class="btn btn-default" type="submit">{{ "LOGIN" | translate }}</button>
-                <input id="remember-me-checkbox" type="checkbox" ng-model="credentials.rememberMe" tooltip-animation="false" tooltip-placement="left" tooltip="Remember me?"/>
+                <input id="email-textfield" type="email" class="form-control" ng-model="credentials.email" placeholder="{{ 'EMAIL' | translate }}">
                 <input id="password-textfield" type="password" class="form-control" ng-model="credentials.password" placeholder="{{ 'PASSWORD' | translate }}">
-                <input id="email-textfield" type="email" class="form-control" ng-model="credentials.email" placeholder="{{ 'EMAIL' | translate }}">                
+                <input id="remember-me-checkbox" type="checkbox" ng-model="credentials.rememberMe" tooltip-animation="false" tooltip-placement="left" tooltip="Remember me?"/>
+                <button id="login-button" class="btn btn-default" type="submit">{{ "LOGIN" | translate }}</button>
             </form>
