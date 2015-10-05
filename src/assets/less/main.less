@@ -1,10 +1,10 @@
 /*********************** VARIABLES **************************/
 
 // Header
-@header-height: 66px; // The searchbar is 46 px + 2*10 px padding
-@padding-header-top: 10px;
-@padding-header-bottom: 10px;
+@header-height: 70px;
+@padding-header: 2px;
 @header-color: #f79329;
+@logo-width: 146px;
 
 // Footer
 @footer-height: 40px;
@@ -55,10 +55,9 @@ a {
 
 /*********************** HEADER **************************/
 #header {
-  display: inline;
-  padding: @padding-header-top 10px @padding-header-bottom 10px;
+  padding: @padding-header;
   background-color: @header-color;
-  background-attachment: scroll, fixed;
+  background-attachment: fixed;
   color: rgba(255, 255, 255, 0.5);
   height: @header-height;
   text-align: left;
@@ -68,19 +67,50 @@ a {
   left: 0;
   z-index: 1;
 
-  #logo {
-    width: 200px;
-    height: 46px;
-    float: left;
+  #logo-div {
+    position: fixed;
+    left: 0;
+    top: 6px;
+    width: 20%;
+    min-width: @logo-width;
+    text-align: center;
+
+    #logo {
+      position: relative;
+      width: @logo-width;
+      height: 58px;
+      z-index: 2;
+      margin-left: auto;
+      margin-right: auto;
+    }
   }
 
-  #searchbar {
-    margin-left: 10px;
-    float: left;
-    width: 39%;
+  #search-div {
+    position: fixed;
+    left: 20%;
+    top: 6px;
+    width: 25%;
+    height: auto;
 
+    #search-textfield {
+      position: relative;
+      margin-left: 0;
+      margin-top: auto;
+      margin-bottom: auto;
+      height: 40px;
+      width: auto;
+      float: left;
+    }
+
+    #search-icon {
+      margin-top: auto;
+      margin-bottom: auto;
+      position: relative;
+      margin-right: 0px;
+      font-size: 35px;
+      color: #636567;
+    }
   }
-
   #searchbar .input-group-btn{
         vertical-align: top;
   }
