@@ -6,6 +6,12 @@
 @padding-header-bottom: 10px;
 @header-color: #f79329;
 
+// Main
+// Sidebar
+// Map
+@map-width:50%;
+@sidebar-width:200px;
+
 // Footer
 @footer-height: 40px;
 @padding-footer-top: 5px;
@@ -34,11 +40,11 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 body.hide-map {
 
   #main {
-    width: 100% !important;
+    width: calc(~"98% - @{sidebar-width}") !important;
   }
 
   #map-wrapper {
-    width: 0% !important;
+    width: 18px !important;
   }
 }
 
@@ -114,14 +120,34 @@ a {
   width: 100%;
   transition: width 500ms;
 
+  #sidebar{
+    width: @sidebar-width;
+    top:0px;
+    height:100%;
+    background-color: #445566;
+    position: fixed;
+  }
+
   #map-wrapper {
-    overflow: hidden;
+    //overflow: hidden;
     position: absolute;
     top: 0;
     right: 0;
-    width: 50%;
+    width: @map-width;
     height: 100%;
     transition: inherit;
+
+    #hide-map-button {
+      width:38px;
+      left:-38px;
+      float: left;
+      border-top-right-radius: 0px;
+      border-bottom-right-radius: 0px;
+      z-index: 1001;
+      position: absolute;
+      box-sizing: border-box;
+
+    }
 
     #map {
       right: 0;
@@ -134,18 +160,22 @@ a {
   }
 
   #main {
+    position: fixed;
+    margin-left: @sidebar-width;
     color: black;
-    width: 50%;
+    /* Firefox */
+
+    width: -moz-calc(~"@{map-width} - @{sidebar-width}");
+    /* WebKit */
+    width: -webkit-calc(~"@{map-width} - @{sidebar-width}");
+    /* Opera */
+    width: -o-calc(~"@{map-width} - @{sidebar-width}");
+    /* Standard */
+    width: calc(~"@{map-width} - @{sidebar-width}");
+
     height: 100%;
     transition: inherit;
 
-    #hide-map-button {
-      float: right;
-      margin-right: 0px;
-      margin-top: 10px;
-      border-top-right-radius: 0px;
-      border-bottom-right-radius: 0px;
-    }
 
     .tabs {
       margin: 0px 10px 10px 10px;
