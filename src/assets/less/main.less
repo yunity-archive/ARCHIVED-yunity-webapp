@@ -2,7 +2,6 @@
 
 // Header
 @header-height: 70px;
-@padding-header: 2px;
 @header-color: #f79329;
 @logo-width: 146px;
 
@@ -55,7 +54,6 @@ a {
 
 /*********************** HEADER **************************/
 #header {
-  padding: @padding-header;
   background-color: @header-color;
   background-attachment: fixed;
   color: rgba(255, 255, 255, 0.5);
@@ -85,32 +83,22 @@ a {
     }
   }
 
-  #search-div {
-    position: fixed;
-    left: 20%;
-    top: 6px;
-    width: 25%;
-    height: auto;
-
     #search-textfield {
-      position: relative;
-      margin-left: 0;
-      margin-top: auto;
-      margin-bottom: auto;
+      position: fixed;
+      left: 20%;
+      top: 15px;
       height: 40px;
-      width: auto;
-      float: left;
+      width: 25%;
     }
-
+  
     #search-icon {
-      margin-top: auto;
-      margin-bottom: auto;
-      position: relative;
-      margin-right: 0px;
-      font-size: 35px;
+      position: fixed;
+      left:45.5%;
+      top:19px;
+      font-size: 30px;
       color: #636567;
     }
-  }
+  
   #searchbar .input-group-btn{
         vertical-align: top;
   }
