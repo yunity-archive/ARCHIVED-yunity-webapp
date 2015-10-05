@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.5/leaflet.css" />
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
 </head>
 <body data-ng-app="yunity" ng-class="bodyClass"  ng-controller="mapCtrl">
     <!-- Header -->
@@ -21,27 +22,24 @@
     </div>
 
     <div id="main-wrapper" >
+        <div id="sidebar">
+            <ul>
+                <div sidebar-comunities></div>
+                <div sidebar-groups></div>
+                <div sidebar-events></div>
+            </ul>
+        </div>
 
         <div id="map-wrapper">
+
+
+            <button id="hide-map-button" type="button" class="btn btn-primary" ng-click="toggleMap()"><i  class="fa fa-globe" ></i></button></br>-->
             <div id="map" y-map></div>
         </div>
 
         <!-- Main -->
         <div id="main" ui-view>
 
-            <input id="hide-map-button" type="button" class="btn btn-primary" ng-click="toggleMap()" value="{{ 'TOGGLE_MAP' | translate}}"></br>
-
-            <!-- <div class="tabs" bs-active-pane="tabs.activeTab" bs-tabs>
-                <div ng-repeat="tab in tabs" title="{{ tab.title }}" name="{{ tab.title }}" disabled="{{ tab.disabled }}" ng-include="tab.template" bs-pane>
-
-                </div>
-            </div> -->
-             <tabset>
-                    <tab ng-repeat="tab in tabs" heading="{{tab.title}}" active="tab.active" disable="tab.disabled">
-                            <div ng-include="tab.template">
-                            </div>
-                    </tab>
-            </tabset>
         </div>
     </div>
 
