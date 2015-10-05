@@ -27,27 +27,24 @@ import yunityTranslate from 'yunity-webapp-common/translate';
 
     yunity.config(($stateProvider, $urlRouterProvider) => {
 
-        $urlRouterProvider.otherwise('/');
+        $urlRouterProvider.otherwise('/main/valuables');
 
         $stateProvider
-            .state('home', {
-                url: '/home',
-                //template: require('../src/components/foodbaskets/foodbaskets.html'),
-                controller: 'mainCtrl',
-                resolve: {
-                    foodbasketsPayload: () => {
-                        return [{
-                            title: 'Banana basket',
-                            description: 'fresh, bright yellow bananas',
-                            user: {
-                                name: 'Marcel'
-                            },
-                            position: {
-                                name: 'Hawaii'
-                            }
-                        }]
-                    }
-                },
+            .state('main', {
+                abstract: true,
+                template: '<main-panels/>',
+                onEnter: ($state) => {
+                    console.log('hi');
+                    // $state.go('main.valuables');
+                }
+            })
+            .state('main.valuables', {
+                url: '/main/valuables',
+                template: 'valuables',
+            })
+            .state('main.crowdsourcing', {
+                url: '/main/crowdsourcing',
+                template: 'crowdsourcing',
             })
             .state('about', {
                 url: '/about',

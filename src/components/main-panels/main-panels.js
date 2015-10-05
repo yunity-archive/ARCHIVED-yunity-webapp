@@ -1,13 +1,7 @@
-var homeTemplate = require('ngtemplate!./home.html');
-var aboutTemplate = require('ngtemplate!../about/about.html');
-var searchTemplate = require('ngtemplate!../search/search_results.html');
-var profileTemplate = require('ngtemplate!../profile/profile.html');
 
-
-
-angular.module('yunity').controller('mainCtrl', [
-    '$scope', '$http',
-    function ($scope, $http) {
+angular.module('yunity').directive('mainPanels', function () { return {
+    template: require('./main-panels.html'),
+    controller: function ($scope, $http) {
 
         $scope.searchResults = [];
 
@@ -20,16 +14,12 @@ angular.module('yunity').controller('mainCtrl', [
         $scope.tabs = [
             {
                 title: 'Home',
-                template: homeTemplate
-
             },
             {
                 title: 'Search',
-                template: searchTemplate
             },
             {
                 title: 'Profile',
-                template: profileTemplate
             }
         ];
         $scope.tabs[0].active = "true";
@@ -39,5 +29,5 @@ angular.module('yunity').controller('mainCtrl', [
             then(function (response) {
                 $scope.foodbaskets = response.data;  //retrieve results and add to existing results
             });
-
-    }]);
+    }}
+});
