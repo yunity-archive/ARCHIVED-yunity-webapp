@@ -1,10 +1,9 @@
 /*********************** VARIABLES **************************/
 
 // Header
-@header-height: 66px; // The searchbar is 46 px + 2*10 px padding
-@padding-header-top: 10px;
-@padding-header-bottom: 10px;
+@header-height: 70px;
 @header-color: #f79329;
+@logo-width: 146px;
 
 // Main
 // Sidebar
@@ -61,10 +60,8 @@ a {
 
 /*********************** HEADER **************************/
 #header {
-  display: inline;
-  padding: @padding-header-top 10px @padding-header-bottom 10px;
   background-color: @header-color;
-  background-attachment: scroll, fixed;
+  background-attachment: fixed;
   color: rgba(255, 255, 255, 0.5);
   height: @header-height;
   text-align: left;
@@ -74,39 +71,75 @@ a {
   left: 0;
   z-index: 1;
 
-  #logo {
-    width: 200px;
-    height: 46px;
-    float: left;
+  #logo-div {
+    position: fixed;
+    left: 0;
+    top: 6px;
+    width: 20%;
+    min-width: @logo-width;
+    text-align: center;
+
+    #logo {
+      position: relative;
+      width: @logo-width;
+      height: 58px;
+      z-index: 2;
+      margin-left: auto;
+      margin-right: auto;
+    }
   }
 
-  #searchbar {
-    margin-left: 10px;
-    float: left;
-    width: 39%;
-
+  #search-textfield {
+    position: fixed;
+    left: 20%;
+    top: 15px;
+    height: 40px;
+    width: 25%;
   }
 
-  #searchbar .input-group-btn{
-        vertical-align: top;
-  }
-  #searchbar i{
-          background-color: white;
+  #search-icon {
+    position: fixed;
+    left:45.5%;
+    top:19px;
+    font-size: 30px;
+    color: #636567;
   }
 
   #login-form {
-    float: right;
-    margin-right: 20px;
-    width: 30%;
+    position:fixed;
+    right: 56px;
+    top: 15px;
+    width: 49%;
 
-    .mail-field {
-      width: 50%;
-      margin-right: 0px;
+    #email-textfield {
+      display: inline;
+      float:right;
+      margin-right: 6px;
+      height: 40px;
+      width: 192px;
     }
 
-    .password-field {
-      width: 50%;
+    #password-textfield {
+      display: inline;
+      float:right;
+      margin-right: 9.5px;
+      height: 40px;
+      width: 192px;
+    }
+
+    #remember-me-checkbox { // checkbox size is 16x16
+      display: inline;
+      margin-right: 9.5px;
+      margin-top: 12px;
+      float:right;
+    }
+
+    #login-button {
+      display: inline;
+      float:right;
       margin-right: 0px;
+      height: 40px;
+      width: 76px;
     }
   }
 }

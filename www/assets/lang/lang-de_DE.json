@@ -13,5 +13,6 @@
     "SEARCH_RESULTS":	"Suchergebnisse",
     "LOGIN":            "Login",
     "EMAIL":            "Email",
-    "PASSWORD":         "Passwort"
+    "PASSWORD":         "Passwort",
+    "SEARCH_PLACEHOLER":"Entdecke die Community..."
 }
