@@ -33,10 +33,6 @@ import yunityTranslate from 'yunity-webapp-common/translate';
             .state('main', {
                 abstract: true,
                 template: '<main-panels/>',
-                onEnter: ($state) => {
-                    console.log('hi');
-                    // $state.go('main.valuables');
-                }
             })
             .state('main.valuables', {
                 url: '/main/valuables',

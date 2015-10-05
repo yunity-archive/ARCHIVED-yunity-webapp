@@ -1,4 +1,5 @@
 require('./assets/less/main.less');
+require('./assets/less/main-panels.less');
 
 require('./app');
 require('./components/about/controller');
