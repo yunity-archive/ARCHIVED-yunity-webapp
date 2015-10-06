@@ -3,8 +3,9 @@ var path = require('path');
 module.exports = {
     entry: './src/_entry.js',
     output: {
-        path: __dirname,
-        filename: './www/build/bundle.js'
+        path: path.resolve(__dirname, 'www/build/'),
+        filename: 'bundle.js',
+        publicPath: '/build/'
     },
     plugins: [
         new webpack.optimize.OccurenceOrderPlugin(true)
