@@ -4,6 +4,7 @@
 @header-height: 70px;
 @header-color: #f79329;
 @logo-width: 146px;
+@search-icon-color: #636567;
 
 // Main
 // Sidebar
@@ -102,7 +103,15 @@ a {
     left:45.5%;
     top:19px;
     font-size: 30px;
-    color: #636567;
+    color: @search-icon-color;
+    &:hover {
+      text-shadow: -2px 2px 1px lighten(@search-icon-color, 15%);
+      transition: all 0.2s;
+    }
+    &:active {
+      text-shadow: -2px 2px 1px lighten(@search-icon-color, 15%), 0px 2px 2px darken(#4d4d4d, 15%);
+      transition: all 0.02s;
+    }
   }
 
   #login-form {
