@@ -7,6 +7,7 @@ require('./components/main-panels/main-panels');
 require('./components/map/controller');
 require('./components/search/controller');
 require('./components/sidebar/controller');
+require('./components/category-filter/controller');
 require('./shared/login/controller');
 require('./shared/about/controller');
 require('../node_modules/angular-translate-loader-static-files/angular-translate-loader-static-files');
