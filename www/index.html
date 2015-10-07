@@ -23,8 +23,8 @@
 
     </div>
 
-    <div id="main-wrapper" >
-        <div id="sidebar">
+    <div id="main-wrapper">
+        <div id="sidebar" ui-view="sidebar">
             <ul>
                 <div sidebar-comunities></div>
                 <div sidebar-groups></div>
@@ -32,16 +32,16 @@
             </ul>
         </div>
 
-        <div id="map-wrapper">
-
-
-            <button id="hide-map-button" type="button" class="btn btn-primary" ng-click="toggleMap()"><i  class="fa fa-globe" ></i></button></br>-->
-            <div id="map" y-map></div>
+        <div ui-view="map">
+            <div id="map-wrapper">
+                <button id="hide-map-button" type="button" class="btn btn-primary" ng-click="toggleMap()"><i  class="fa fa-globe" ></i></button></br>
+                <div id="map" y-map></div>
+            </div>
         </div>
 
         <!-- Main -->
-        <div id="main" ui-view>
-
+        <div id="main" ui-view="main">
+            MAIN MAIN
         </div>
     </div>
 

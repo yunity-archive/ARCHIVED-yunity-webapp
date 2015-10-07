@@ -32,7 +32,11 @@ import yunityTranslate from 'yunity-webapp-common/translate';
         $stateProvider
             .state('main', {
                 abstract: true,
-                template: '<main-panels/>',
+                views: {
+                    main: {
+                        template: '<main-panels/>',
+                    },
+                }
             })
             .state('main.valuables', {
                 url: '/main/valuables',
@@ -41,6 +45,20 @@ import yunityTranslate from 'yunity-webapp-common/translate';
             .state('main.crowdsourcing', {
                 url: '/main/crowdsourcing',
                 template: 'crowdsourcing',
+            })
+            .state('profile', {
+                url: '/profile',
+                views: {
+                    main: {
+                        template: 'profile page',
+                    },
+                    sidebar: {
+                        template: "profile sidebar"
+                    },
+                    map: {
+                        template: ' ',
+                    },
+                }
             })
             .state('about', {
                 url: '/about',
