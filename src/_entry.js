@@ -16,12 +16,12 @@ import 'yunity-webapp-common/translate';
 import './app';
 import './routes';
 
-import './components/about/controller';
+import './components/about/about';
 import './components/main-panels/main-panels';
 import './components/globalController';
-import './components/search/controller';
-import './components/sidebar/controller';
-import './components/category-filter/controller';
+import './components/search/search';
+import './components/sidebar/sidebar';
+import './components/category-filter/category-filter';
 import './shared/login/controller';
 import './shared/about/controller';
 import '../node_modules/angular-translate-loader-static-files/angular-translate-loader-static-files';
