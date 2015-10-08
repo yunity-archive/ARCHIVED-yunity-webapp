@@ -1,5 +1,5 @@
 
-<tabset>
+<tabset class="main-tabs">
     <tab ng-repeat="tab in tabs" heading="{{tab.title}}" active="tab.active" disable="tab.disabled">
         <div ng-include="tab.templateUrl" />
     </tab>

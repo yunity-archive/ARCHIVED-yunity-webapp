@@ -1,5 +1,5 @@
 import './assets/less/main.less';
-import './assets/less/main-panels.less';
+import './assets/less/main-tabs.less';
 
 import angular from 'angular';
 import 'angular-ui-bootstrap';
@@ -17,11 +17,13 @@ import './app';
 import './routes';
 
 import './components/about/about';
-import './components/main-tabs/main-tabs';
+import './components/category-filter/category-filter';
 import './components/globalController';
+import './components/main-tabs/main-tabs';
 import './components/search/search';
 import './components/sidebar/sidebar';
-import './components/category-filter/category-filter';
+import './components/wall/wall';
+
 import './shared/login/controller';
 import './shared/about/controller';
 import '../node_modules/angular-translate-loader-static-files/angular-translate-loader-static-files';

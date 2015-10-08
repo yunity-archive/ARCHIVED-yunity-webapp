@@ -18,6 +18,8 @@
 @padding-footer-bottom: 5px;
 @footer-color: #f79329;
 
+@silver: #ddd;
+
 // Links
 @link-color:       blue;
 @link-hover-color: darken(@link-color, 15%);
@@ -163,7 +165,7 @@ a {
     padding: 30px;
     width: @sidebar-width;
     height:100%;
-    background-color: silver;
+    background-color: @silver;
     position: fixed;
   }
 
@@ -205,6 +207,7 @@ a {
   #main {
     position: fixed;
     margin-left: @sidebar-width;
+    background: @silver;
     color: black;
     /* Firefox */
 
