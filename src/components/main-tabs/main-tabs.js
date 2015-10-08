@@ -5,6 +5,7 @@ var templates = {
 };
 
 angular.module('yunity').directive('mainTabs', function () { return {
+    restrict: 'A',
     template: require('./main-tabs.html'),
     controller: function ($scope, $http) {
 

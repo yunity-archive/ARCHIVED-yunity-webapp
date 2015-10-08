@@ -1,5 +1,5 @@
+import './assets/less/style.less';
 import './assets/less/main.less';
-import './assets/less/main-tabs.less';
 
 import angular from 'angular';
 import 'angular-ui-bootstrap';

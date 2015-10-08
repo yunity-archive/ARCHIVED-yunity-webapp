@@ -1,0 +1,249 @@
+/*********************** VARIABLES **************************/
+
+// Header
+@header-height: 70px;
+@header-color: #f79329;
+@logo-width: 146px;
+@search-icon-color: #636567;
+
+// Main
+// Sidebar
+// Map
+@map-width:50%;
+@sidebar-width:200px;
+
+// Footer
+@footer-height: 40px;
+@padding-footer-top: 5px;
+@padding-footer-bottom: 5px;
+@footer-color: #f79329;
+
+@silver: #ddd;
+
+// Links
+@link-color:       blue;
+@link-hover-color: darken(@link-color, 15%);
+
+/*************************************************************/
+
+
+/* Reset everything */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+
+/*********************** GENERAL **************************/
+body.hide-map {
+
+  #main {
+    width: calc(~"98% - @{sidebar-width}") !important;
+  }
+
+  #map-wrapper {
+    width: 18px !important;
+  }
+}
+
+a {
+  color: @link-color;
+  text-decoration: none;
+
+  &:hover {
+    color: @link-hover-color;
+    text-decoration: none;
+  }
+}
+
+
+/*********************** HEADER **************************/
+#header {
+  background-color: @header-color;
+  background-attachment: fixed;
+  color: rgba(255, 255, 255, 0.5);
+  height: @header-height;
+  text-align: left;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+
+  #logo-div {
+    position: fixed;
+    left: 0;
+    top: 6px;
+    width: 20%;
+    min-width: @logo-width;
+    text-align: center;
+
+    #logo {
+      position: relative;
+      width: @logo-width;
+      height: 58px;
+      z-index: 2;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  #search-textfield {
+    position: fixed;
+    left: 20%;
+    top: 15px;
+    height: 40px;
+    width: 25%;
+  }
+
+  #search-icon {
+    position: fixed;
+    left:45.5%;
+    top:19px;
+    font-size: 30px;
+    color: @search-icon-color;
+    &:hover {
+      text-shadow: -2px 2px 1px lighten(@search-icon-color, 15%);
+      transition: all 0.2s;
+    }
+    &:active {
+      text-shadow: -2px 2px 1px lighten(@search-icon-color, 15%), 0px 2px 2px darken(#4d4d4d, 15%);
+      transition: all 0.02s;
+    }
+  }
+
+  #login-form {
+    position:fixed;
+    text-align: right;
+    right: 56px;
+    top: 15px;
+    width: 49%;
+
+    #email-textfield {
+      display: inline;
+      margin-right: 6px;
+      height: 40px;
+      width: 192px;
+    }
+
+    #password-textfield {
+      display: inline;
+      margin-right: 9.5px;
+      height: 40px;
+      width: 192px;
+    }
+
+    #remember-me-checkbox { // checkbox size is 16x16
+      display: inline;
+      margin-right: 9.5px;
+      margin-top: 12px;
+    }
+
+    #login-button {
+      display: inline;
+      margin-right: 0px;
+      height: 40px;
+      width: 76px;
+    }
+  }
+}
+
+
+/*********************** MAIN **************************/
+#main-wrapper {
+  margin-top: @header-height;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  transition: width 500ms;
+
+  #sidebar{
+    padding: 30px;
+    width: @sidebar-width;
+    height:100%;
+    background-color: @silver;
+    position: fixed;
+  }
+
+  #sidebar div{
+    padding-bottom: 20px;
+  }
+
+  #map-wrapper {
+    //overflow: hidden;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: @map-width;
+    height: 100%;
+    transition: inherit;
+
+    #hide-map-button {
+      width:38px;
+      left:-38px;
+      float: left;
+      border-top-right-radius: 0px;
+      border-bottom-right-radius: 0px;
+      z-index: 1001;
+      position: absolute;
+      box-sizing: border-box;
+
+    }
+
+    #map {
+      right: 0;
+      position: absolute;
+      text-align: right;
+      top: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  #main {
+    position: fixed;
+    margin-left: @sidebar-width;
+    background: @silver;
+    color: black;
+    /* Firefox */
+
+    width: -moz-calc(~"@{map-width} - @{sidebar-width}");
+    /* WebKit */
+    width: -webkit-calc(~"@{map-width} - @{sidebar-width}");
+    /* Opera */
+    width: -o-calc(~"@{map-width} - @{sidebar-width}");
+    /* Standard */
+    width: calc(~"@{map-width} - @{sidebar-width}");
+
+    height: 100%;
+    transition: inherit;
+
+
+    .tabs {
+      margin: 0px 10px 10px 10px;
+    }
+  }
+}
+
+
+/*********************** FOOTER **************************/
+#footer {
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  padding: @padding-footer-top 10px @padding-footer-bottom 10px;
+  position: fixed;
+  text-align: left;
+  background-color: @footer-color;
+  color: black;
+
+  ul li {
+    margin-left:15px;
+    float:left;
+    display:inline;
+  }
+}
