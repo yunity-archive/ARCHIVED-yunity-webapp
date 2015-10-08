@@ -17,13 +17,13 @@ angular.module('yunity').config(($stateProvider, $urlRouterProvider) => {
             url: '/profile',
             views: {
                 main: {
-                    template: 'profile page',
+                    template: 'profile page profile page Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae odit deleniti sed aspernatur quia dolorum repellat repudiandae itaque totam sequi iusto veritatis provident tempora aperiam, rem voluptatem, corporis natus ex.',
                 },
                 sidebar: {
                     template: "profile sidebar"
                 },
                 map: {
-                    template: ' ',
+                    template: '<map-pane display="hidden"/>',
                 },
             }
         })

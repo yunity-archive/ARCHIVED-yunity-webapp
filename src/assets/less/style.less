@@ -12,7 +12,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 
 
 /*********************** GENERAL **************************/
-body.hide-map {
+body.map-minimized {
 
   #main {
     width: calc(~"98% - @{sidebar-width}") !important;
@@ -20,6 +20,16 @@ body.hide-map {
 
   #map-wrapper {
     width: 18px !important;
+  }
+}
+
+body.map-hidden {
+  #main {
+    width: 100%;
+  }
+
+  #map-wrapper {
+    display: none;
   }
 }
 
@@ -176,29 +186,29 @@ a {
       height: 100%;
     }
   }
+}
 
-  #main {
-    position: fixed;
-    margin-left: @sidebar-width;
-    background: @silver;
-    color: black;
-    /* Firefox */
+#main {
+  position: fixed;
+  margin-left: @sidebar-width;
+  background: @silver;
+  color: black;
+  /* Firefox */
 
-    width: -moz-calc(~"@{map-width} - @{sidebar-width}");
-    /* WebKit */
-    width: -webkit-calc(~"@{map-width} - @{sidebar-width}");
-    /* Opera */
-    width: -o-calc(~"@{map-width} - @{sidebar-width}");
-    /* Standard */
-    width: calc(~"@{map-width} - @{sidebar-width}");
+  width: -moz-calc(~"@{map-width} - @{sidebar-width}");
+  /* WebKit */
+  width: -webkit-calc(~"@{map-width} - @{sidebar-width}");
+  /* Opera */
+  width: -o-calc(~"@{map-width} - @{sidebar-width}");
+  /* Standard */
+  width: calc(~"@{map-width} - @{sidebar-width}");
 
-    height: 100%;
-    transition: inherit;
+  height: 100%;
+  transition: inherit;
 
 
-    .tabs {
-      margin: 0px 10px 10px 10px;
-    }
+  .tabs {
+    margin: 0px 10px 10px 10px;
   }
 }
 

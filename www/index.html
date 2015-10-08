@@ -33,11 +33,10 @@
             </ul>
         </div>
 
-        <div ui-view="map">
-            <div id="map-wrapper">
-                <button id="hide-map-button" type="button" class="btn btn-primary" ng-click="toggleMap()"><i  class="fa fa-globe" ></i></button></br>
-                <div id="map" y-map></div>
-            </div>
+        <div ui-view="map" id="map-wrapper">
+            <map-pane display="maximized">
+
+            </map-pane>
         </div>
 
         <!-- Main -->
