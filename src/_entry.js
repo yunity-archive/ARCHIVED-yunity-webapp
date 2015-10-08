@@ -18,7 +18,7 @@ import './routes';
 
 import './components/about/controller';
 import './components/main-panels/main-panels';
-import './components/map/controller';
+import './components/globalController';
 import './components/search/controller';
 import './components/sidebar/controller';
 import './components/category-filter/controller';
