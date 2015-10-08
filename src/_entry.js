@@ -1,3 +1,4 @@
+import './assets/less/vars.less';
 import './assets/less/style.less';
 import './assets/less/main.less';
 
@@ -22,6 +23,8 @@ import './components/globalController';
 import './components/main-tabs/main-tabs';
 import './components/search/search';
 import './components/sidebar/sidebar';
+import './components/user-nav/user-nav.js';
+import './components/user-nav/user-nav.less';
 import './components/wall/wall';
 
 import './shared/login/controller';

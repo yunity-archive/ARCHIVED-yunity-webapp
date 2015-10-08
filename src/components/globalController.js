@@ -8,6 +8,8 @@ angular.module('yunity').controller('GlobalController', ['$scope', '$http', ($sc
 
     let hideMap = false;
 
+    $scope.isUserLoggedIn = true;  // TODO: replace with auth service
+
     $scope.bodyClass = {
         'hide-map': hideMap
     };

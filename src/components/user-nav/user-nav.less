@@ -1,0 +1,51 @@
+@import '../../assets/less/vars.less';
+
+.user-nav {
+    float: right;
+    margin-right: 20px;
+    > ul {
+        display: block;
+        list-style: none;
+        > li {
+            position: relative;
+            vertical-align: middle;
+            display: inline-block;
+
+            &.profile img {
+                cursor: pointer;
+                border-radius: 50%;
+                width: 60px;
+                height: 60px;
+            }
+
+            > ul {
+                list-style: none;
+                position: absolute;
+                right: 0;
+                top: @header-height;
+                background: white;
+                border-radius: 5px;
+                display: block;
+                box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+                width: 250px;
+
+                > li {
+                    border-bottom: 1px solid #999;
+                    padding: 10px;
+                    color: black;
+                    text-align: center;
+
+                    &:first-child {
+                        color: white;
+                        font-weight: bold;
+                        line-height: 100%;
+                        padding: 0;
+                        height: 50px;
+                        background: #333 url('http://lorempixel.com/300/100') center;
+                        background-size: cover;
+                    }
+                }
+            }
+        }
+    }
+}

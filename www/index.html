@@ -19,7 +19,8 @@
 
         <div search></div>
 
-        <div login></div>
+        <div login ng-hide="isUserLoggedIn"></div>
+        <div user-nav ng-show="isUserLoggedIn"></div>
 
     </div>
 

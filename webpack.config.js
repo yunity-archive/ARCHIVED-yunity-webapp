@@ -27,7 +27,7 @@ module.exports = {
             },
             {
                 test: /\.less$/,
-                include: path.resolve(__dirname, 'src/assets/less'),
+                include: path.resolve(__dirname, 'src'),
                 loader: 'style!css!less'
             }
         ]
