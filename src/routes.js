@@ -2,24 +2,16 @@ import angular from 'angular';
 
 angular.module('yunity').config(($stateProvider, $urlRouterProvider) => {
 
-    $urlRouterProvider.otherwise('/main/valuables');
+    $urlRouterProvider.otherwise('/main');
 
     $stateProvider
         .state('main', {
-            abstract: true,
+            url: '/main',
             views: {
                 main: {
-                    template: '<main-panels/>',
+                    template: require('./components/main/main.html'),
                 },
             }
-        })
-        .state('main.valuables', {
-            url: '/main/valuables',
-            template: 'valuables',
-        })
-        .state('main.crowdsourcing', {
-            url: '/main/crowdsourcing',
-            template: 'crowdsourcing',
         })
         .state('profile', {
             url: '/profile',

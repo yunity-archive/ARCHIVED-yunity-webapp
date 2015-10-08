@@ -17,7 +17,7 @@ import './app';
 import './routes';
 
 import './components/about/about';
-import './components/main-panels/main-panels';
+import './components/main-tabs/main-tabs';
 import './components/globalController';
 import './components/search/search';
 import './components/sidebar/sidebar';

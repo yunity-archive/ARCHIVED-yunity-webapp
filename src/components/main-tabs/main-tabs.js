@@ -1,6 +1,11 @@
+var templates = {
+    post: require('ngtemplate!./post-panel.html'),
+    crowdsourcing: require('ngtemplate!./crowdsourcing-panel.html'),
+    question: require('ngtemplate!./question-panel.html'),
+};
 
-angular.module('yunity').directive('mainPanels', function () { return {
-    template: require('./main-panels.html'),
+angular.module('yunity').directive('mainTabs', function () { return {
+    template: require('./main-tabs.html'),
     controller: function ($scope, $http) {
 
         $scope.searchResults = [];
@@ -13,13 +18,16 @@ angular.module('yunity').directive('mainPanels', function () { return {
 
         $scope.tabs = [
             {
-                title: 'Home',
+                title: 'Post',
+                templateUrl: templates.post
             },
             {
-                title: 'Search',
+                title: 'Crowdsourcing',
+                templateUrl: templates.crowdsourcing
             },
             {
-                title: 'Profile',
+                title: 'Ask a question',
+                templateUrl: templates.question
             }
         ];
         $scope.tabs[0].active = "true";
