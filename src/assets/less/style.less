@@ -15,7 +15,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 body.map-minimized {
 
   #main {
-    width: calc(~"98% - @{sidebar-width}") !important;
+    width: calc(~"100% - 18px - @{sidebar-width}") !important;
   }
 
   #map-wrapper {
@@ -148,18 +148,6 @@ a {
   width: 100%;
   transition: width 500ms;
 
-  #sidebar{
-    padding: 30px;
-    width: @sidebar-width;
-    height:100%;
-    background-color: @silver;
-    position: fixed;
-  }
-
-  #sidebar div{
-    padding-bottom: 20px;
-  }
-
   #map-wrapper {
     //overflow: hidden;
     position: absolute;
@@ -192,9 +180,20 @@ a {
   }
 }
 
+#sidebar{
+  padding: 30px;
+  width: @sidebar-width;
+  height:100%;
+  background-color: @silver;
+  float: left;
+
+  .section {
+    padding-bottom: 20px;
+  }
+}
+
 #main {
-  position: fixed;
-  margin-left: @sidebar-width;
+  float: left;
   background: @silver;
   color: black;
   /* Firefox */
@@ -209,6 +208,7 @@ a {
 
   height: 100%;
   transition: inherit;
+  padding: 10px;
 
 
   .tabs {

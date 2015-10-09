@@ -9,7 +9,7 @@ angular.module('yunity').directive('wall', () => {
         templateUrl: template,
         controller: ($scope) => {
             $scope.posts = [
-                {body: 'post 1'},
+                {body: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil, deserunt non eos illo quibusdam similique, doloremque, hic possimus incidunt est consequatur, cumque. Amet eos id tenetur labore nam officia itaque?'},
                 {body: 'post 2'},
             ]
         }

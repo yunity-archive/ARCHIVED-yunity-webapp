@@ -1,6 +1,6 @@
 
 <tabset>
-    <tab ng-repeat="tab in tabs" heading="{{tab.title}}" active="tab.active" disable="tab.disabled">
+    <tab ng-repeat="tab in tabs" heading="{{tab.title}}" active="tab.active" disable="tab.disabled" class="main-tab">
         <div ng-include="tab.templateUrl" />
     </tab>
 </tabset>
