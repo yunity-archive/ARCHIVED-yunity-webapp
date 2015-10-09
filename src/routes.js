@@ -14,6 +14,20 @@ angular.module('yunity').config(($stateProvider, $urlRouterProvider) => {
             }
         })
         .state('profile', {
+            url: '/profile/<userId>',
+            views: {
+                main: {
+                    template: 'profile page profile page Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae odit deleniti sed aspernatur quia dolorum repellat repudiandae itaque totam sequi iusto veritatis provident tempora aperiam, rem voluptatem, corporis natus ex.',
+                },
+                sidebar: {
+                    template: "profile sidebar"
+                },
+                map: {
+                    template: '<map-pane display="hidden"/>',
+                },
+            }
+        })
+        .state('userProfile', {
             url: '/profile',
             views: {
                 main: {

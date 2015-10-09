@@ -11,7 +11,7 @@
             vertical-align: middle;
             display: inline-block;
 
-            &.profile img {
+            &.avatar img {
                 cursor: pointer;
                 border-radius: 50%;
                 width: 60px;
@@ -35,14 +35,18 @@
                     color: black;
                     text-align: center;
 
-                    &:first-child {
-                        color: white;
-                        font-weight: bold;
-                        line-height: 100%;
+                    &.profile {
                         padding: 0;
                         height: 50px;
-                        background: #333 url('http://lorempixel.com/300/100') center;
-                        background-size: cover;
+                        a {
+                            display: block;
+                            color: white;
+                            text-shadow: 1px 1px black;
+                            font-weight: bold;
+                            height: 100%;
+                            background: #333 url('http://lorempixel.com/300/100') center;
+                            background-size: cover;
+                        }
                     }
                 }
             }
