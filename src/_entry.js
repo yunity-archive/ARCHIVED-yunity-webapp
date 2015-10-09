@@ -30,6 +30,7 @@ import './components/user-nav/user-nav.js';
 import './components/user-nav/user-nav.less';
 import './components/wall/wall';
 
+import './shared/services/searchService';
 import './shared/login/controller';
 import './shared/about/controller';
 import '../node_modules/angular-translate-loader-static-files/angular-translate-loader-static-files';
