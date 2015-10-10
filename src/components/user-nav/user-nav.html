@@ -2,14 +2,9 @@
     <ul>
         <li class="chats" ng-click="toggleSubnav('chats')">
             <img class="icon" alt="chats" />
-            <ul class="subnav" ng-show="state.showSubnav['chats']">
-                <li>spam</li>
-                <li ng-repeat="chat in chats">
-                    {{ chat.senderName }}
-                    {{ chat.timeReceived }}
-                    {{ chat.message }}
-                </li>
-            </ul>
+            <div class="subnav" ng-show="state.showSubnav['chats']">
+                <chat-summary />
+            </div>
         </li>
         <li class="notifications" ng-click="toggleSubnav('notifications')">
             <img class="icon" alt="notifications" />

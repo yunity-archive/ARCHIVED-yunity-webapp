@@ -3,6 +3,13 @@
 .user-nav {
     float: right;
     margin-right: 20px;
+
+    .subnav {
+        position: absolute;
+        top: @header-height;
+        right: 0;
+    }
+
     > ul {
         display: block;
         list-style: none;
@@ -23,9 +30,6 @@
 
             > ul {
                 list-style: none;
-                position: absolute;
-                right: 0;
-                top: @header-height;
                 background: white;
                 border-radius: 5px;
                 display: block;

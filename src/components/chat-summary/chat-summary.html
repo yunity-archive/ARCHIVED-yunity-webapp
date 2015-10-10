@@ -1,0 +1,10 @@
+<div class="chat-summary">
+    <ul>
+        <li class="chat-line">spam</li>
+        <li class="chat-line" ng-repeat="chat in chats">
+            {{ chat.senderName }}
+            {{ chat.timeReceived }}
+            {{ chat.message }}
+        </li>
+    </ul>
+</div>

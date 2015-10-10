@@ -19,6 +19,8 @@ import './routes';
 
 import './components/about/about';
 import './components/category-filter/category-filter';
+import './components/chat-summary/chat-summary.js';
+import './components/chat-summary/chat-summary.less';
 import './components/globalController';
 import './components/main-tabs/main-tabs';
 import './components/map-pane/map-pane';
