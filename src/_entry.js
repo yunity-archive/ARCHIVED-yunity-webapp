@@ -10,6 +10,7 @@ import 'angular-sanitize';
 import 'angular-translate';
 
 import 'yunity-webapp-common/api';
+import 'yunity-webapp-common/chat';
 import 'yunity-webapp-common/map';
 import 'yunity-webapp-common/translate';
 //import yunityChat from 'yunity-webapp-common/chat'; //does not work yet

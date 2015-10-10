@@ -5,6 +5,7 @@ let yunity = angular.module('yunity', [
     'ngAnimate',
     'ngSanitize',
     'yunityAPI',
+    'yunityChat',
     'yunityMap',
     'yunityTranslate'
 ]);
