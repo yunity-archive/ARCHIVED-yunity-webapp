@@ -13,11 +13,12 @@ module.exports = {
     module: {
         loaders: [
             {
-                test: /\.jsx?$/,
+                test: /\.js?$/,
                 include: [
-                    /\/yunity-webapp-common\//,
-                    path.resolve(__dirname, 'src')
+                    __dirname,
+                    /yunity-webapp-common/
                 ],
+                exclude: /(node_modules|bower_components)/,
                 loaders: ['babel-loader']
             },
             {
