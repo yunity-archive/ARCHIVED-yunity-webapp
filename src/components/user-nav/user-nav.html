@@ -1,10 +1,25 @@
 <div class="user-nav">
     <ul>
-        <li><img alt="chats" /></li>
-        <li><img alt="notifications" /></li>
-        <li class="avatar" ng-click="toggleSubnav()" >
-            <img src="http://lorempixel.com/200/200/animals" alt="profile"/>
-            <ul class="subnav" ng-show="state.showSubnav">
+        <li class="chats" ng-click="toggleSubnav('chats')">
+            <img class="icon" alt="chats" />
+            <ul class="subnav" ng-show="state.showSubnav['chats']">
+                <li>spam</li>
+                <li ng-repeat="chat in chats">
+                    {{ chat.senderName }}
+                    {{ chat.timeReceived }}
+                    {{ chat.message }}
+                </li>
+            </ul>
+        </li>
+        <li class="notifications" ng-click="toggleSubnav('notifications')">
+            <img class="icon" alt="notifications" />
+            <ul class="subnav" ng-show="state.showSubnav['notifications']">
+                <li>spam</li>
+            </ul>
+        </li>
+        <li class="avatar" ng-click="toggleSubnav('avatar')">
+            <img class="icon" src="http://lorempixel.com/200/200/animals" alt="profile"/>
+            <ul class="subnav" ng-show="state.showSubnav['avatar']">
                 <li class="profile">
                     <a ui-sref="userProfile">[user name]</a>
                 </li>

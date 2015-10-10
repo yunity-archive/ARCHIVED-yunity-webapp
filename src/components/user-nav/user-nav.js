@@ -10,12 +10,15 @@ angular.module('yunity').directive('userNav', () => {
         controller: ($scope) => {
 
             let state = {
-                showSubnav: false
+                showSubnav: {}
             }
 
             $scope.state = state;
-            $scope.toggleSubnav = () => {
-                state.showSubnav = !state.showSubnav;
+            $scope.toggleSubnav = (which) => {
+                let next = !state.showSubnav[which];
+                state.showSubnav = {
+                    [which]: next
+                };
             }
         }
     }
